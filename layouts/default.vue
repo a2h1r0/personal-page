@@ -4,74 +4,81 @@ v-app(dark, v-if='true')
 
 v-app(dark, v-else)
   v-navigation-drawer(
-    v-model='drawer',
-    :mini-variant='miniVariant',
-    :clipped='clipped',
+    app,
+    permanent,
     fixed,
-    app
+    :mini-variant='$vuetify.breakpoint.xs'
   )
     v-list
       v-list-item(
-        v-for='(item, i) in items',
-        :key='i',
-        :to='item.to',
+        v-for='page in pages',
+        :key='page.to',
+        :to='page.to',
         router,
         exact
       )
         v-list-item-action
-          v-icon {{ item.icon }}
+          v-icon {{ page.icon }}
         v-list-item-content
-          v-list-item-title(v-text='item.title')
-  v-app-bar(:clipped-left='clipped', fixed, app)
-    v-app-bar-nav-icon(@click.stop='drawer = !drawer')
-      v-btn(icon, @click.stop='miniVariant = !miniVariant')
-        v-icon mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}
-      v-btn(icon, @click.stop='clipped = !clipped')
-        v-icon mdi-application
-      v-btn(icon, @click.stop='fixed = !fixed')
-        v-icon mdi-minus
-      v-toolbar-title(v-text='title')
-        v-spacer
-          v-btn(icon, @click.stop='rightDrawer = !rightDrawer')
-            v-icon mdi-menu
+          v-list-item-title(v-text='page.title')
+
   v-main
     v-container
       Nuxt
-  v-navigation-drawer(v-model='rightDrawer', :right='right', temporary, fixed)
-    v-list
-      v-list-item(@click.native='right = !right')
-        v-list-item-action
-          v-icon(light) mdi-repeat
-        v-list-item-title Switch drawer (click me)
-  v-footer(:absolute='!fixed', app)
-    span © {{ new Date().getFullYear() }}
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export type DataType = {
+  pages: object[]
+}
+
+export default Vue.extend({
   name: 'DefaultLayout',
-  data() {
+  data(): DataType {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
+      pages: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Top page',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-account',
+          title: 'Profile',
+          to: '/profile',
+        },
+        {
+          icon: 'mdi-book-open',
+          title: 'Publications',
+          to: '/publication',
         },
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
     }
   },
-}
+})
 </script>
+
+<style lang="stylus">
+@import url('https://fonts.googleapis.com/css?family=Nunito')
+
+::-webkit-scrollbar
+	width 10px
+
+::-webkit-scrollbar-track
+	border-radius 10px
+	box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
+
+::-webkit-scrollbar-thumb
+	background-color #c0c0c0
+	border-radius 10px
+	box-shadow 0 0 0 1px rgba(255, 255, 255, 0.3)
+
+#app
+	font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
+	[class^='text-']
+		font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
+
+	overflow-wrap break-word
+</style>
