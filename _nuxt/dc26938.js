@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{421:function(n,e,t){"use strict";t.r(e);var r=t(0).a.extend({}),c=t(86),l=t(119),o=t.n(l),w=t(374),component=Object(c.a)(r,(function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("v-container",[t("p",[n._v("準備中")])])}),[],!1,null,null,null);e.default=component.exports;o()(component,{VContainer:w.a})}}]);
