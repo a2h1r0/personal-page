@@ -25,6 +25,9 @@ v-app(dark, v-else)
   v-main
     v-container
       Nuxt
+
+    #footer
+      | Copyright © 2022–{{ new Date().getFullYear() }} Atsuhiro Fujii
 </template>
 
 <script lang="ts">
@@ -43,11 +46,6 @@ export default Vue.extend({
           icon: 'mdi-home',
           title: 'Top page',
           to: '/',
-        },
-        {
-          icon: 'mdi-account',
-          title: 'Profile',
-          to: '/profile',
         },
         {
           icon: 'mdi-book-open',
@@ -81,4 +79,12 @@ export default Vue.extend({
 		font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
 
 	overflow-wrap break-word
+
+	#footer
+		position absolute
+		bottom 0
+		left 50%
+		transform translateX(-50%)
+		-webkit-transform translateX(-50%)
+		-ms-transform translateX(-50%)
 </style>

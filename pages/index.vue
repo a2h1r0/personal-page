@@ -1,78 +1,43 @@
 <template lang="pug">
-v-row(justify='center', align='center')
-  v-col(cols='12', sm='8', md='6')
-    v-card.logo.py-4.d-flex.justify-center
-      NuxtLogo
-      VuetifyLogo
-    v-card
-      v-card-title.headline.test
-        | Welcome to the Vuetify + Nuxt.js template
-      v-card-text
-        p
-          | Vuetify is a progressive Material Design component framework for
-          | Vue.js. It was designed to empower developers to create amazing
-          | applications.
-        p
-          | For more information on Vuetify, check out the
-          a(
-            href='https://vuetifyjs.com',
-            target='_blank',
-            rel='noopener noreferrer'
-          )
-            | documentation
-          | .
-        p
-          | If you have questions, please join the official
-          a(
-            href='https://chat.vuetifyjs.com/',
-            target='_blank',
-            rel='noopener noreferrer',
-            title='chat'
-          )
-            | discord
-          | .
-        p
-          | Find a bug? Report it on the github
-          a(
-            href='https://github.com/vuetifyjs/vuetify/issues',
-            target='_blank',
-            rel='noopener noreferrer',
-            title='contribute'
-          )
-            | issue board
-          | .
-        p
-          | Thank you for developing with Vuetify and I look forward to bringing
-          | more exciting features in the future.
-        .text-xs-right
-          em
-            small — John Leider
-        hr.my-3
-        a(
-          href='https://nuxtjs.org/',
-          target='_blank',
-          rel='noopener noreferrer'
-        )
-          | Nuxt Documentation
-        br
-        a(
-          href='https://github.com/nuxt/nuxt.js',
-          target='_blank',
-          rel='noopener noreferrer'
-        )
-          | Nuxt GitHub
-      v-card-actions
-        v-spacer
-          v-btn(color='primary', nuxt='', to='/inspire') Continue
+v-container
+  h1.text-h4.mb-8 藤井 敦寛
+
+  p
+    | メールアドレスは公開しておりません．お手数ですがSNS経由でご連絡をお願い致します．
+    br
+    | （SNS経由でメールアドレスをお伝えすることは可能です．）
+  a.twitter-mention-button(
+    href='https://twitter.com/intent/tweet?screen_name=_a2h1r0&ref_src=twsrc%5Etfw',
+    data-show-count='false'
+  ) Tweet to @_a2h1r0
+  script(async, src='https://platform.twitter.com/widgets.js', charset='utf-8')
+
+  v-divider.my-4
+
+  h2.text-h5.mb-2 略歴
+  p 1998年生まれ．2022年，立命館大学大学院情報理工学研究科博士課程前期課程修了．修士（工学）．2022年より民間企業で勤務．
+
+  v-divider.my-4
+
+  h2.text-h5.mb-2 学歴
+  p
+    | Apr. 2013–Mar. 2016
+    br
+    | 大阪明星学園 明星高等学校 卒業
+  p
+    | Apr. 2016–Mar. 2020
+    br
+    | 立命館大学情報理工学部情報システム学科 卒業（指導教員：村尾和哉准教授）
+  p
+    | Apr. 2020–Mar. 2022
+    br
+    | 立命館大学大学院情報理工学研究科博士課程前期課程 修了（指導教員：村尾和哉准教授）
+    br
+    | 修士（工学）
 </template>
 
-<script>
-export default {
-  name: 'IndexPage',
-}
-</script>
+<script lang="ts">
+import Vue from 'vue'
 
-<style lang="stylus">
-.test
-  color red
-</style>
+export default Vue.extend({})
+</script>
