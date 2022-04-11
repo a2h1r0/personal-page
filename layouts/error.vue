@@ -10,22 +10,32 @@ v-container
   NuxtLink(to='/') > home
 </template>
 
-<script>
-export default {
-  name: 'EmptyLayout',
-  layout: 'empty',
+<script lang="ts">
+import Vue from 'vue'
+
+export type DataType = {
+  pageNotFound: string
+  otherError: string
+}
+
+export default Vue.extend({
   props: {
     error: {
       type: Object,
       default: null,
     },
   },
-  head() {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+  data(): DataType {
     return {
-      title,
+      pageNotFound: '404 Not Found',
+      otherError: 'An error occurred',
     }
   },
-}
+  head(): object {
+    return {
+      title:
+        this.error.statusCode === 404 ? this.pageNotFound : this.otherError,
+    }
+  },
+})
 </script>

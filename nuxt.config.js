@@ -9,10 +9,10 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - personal-page',
-    title: 'personal-page',
+    titleTemplate: '%s / Atsuhiro Fujii',
+    title: 'Atsuhiro Fujii',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
