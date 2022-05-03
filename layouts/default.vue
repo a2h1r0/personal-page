@@ -1,8 +1,5 @@
 <template lang="pug">
-v-app(dark, v-if='true')
-  p.text-center.mt-12 現在準備中です．．．
-
-v-app(dark, v-else)
+v-app(dark)
   v-navigation-drawer(
     app,
     permanent,
@@ -23,7 +20,7 @@ v-app(dark, v-else)
           v-list-item-title(v-text='page.title')
 
   v-main
-    v-container
+    v-container.mb-8
       Nuxt
 
     #footer
@@ -38,7 +35,6 @@ export type DataType = {
 }
 
 export default Vue.extend({
-  name: 'DefaultLayout',
   data(): DataType {
     return {
       pages: [

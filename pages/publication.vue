@@ -1,5 +1,8 @@
 <template lang="pug">
-v-container
+v-container(dark, v-if='true')
+  p.text-center.mt-12 現在準備中です．．．
+
+v-container(v-else)
   v-container
     h2 学術論文誌発表論文 / Journal paper
     v-list(color='dark')
