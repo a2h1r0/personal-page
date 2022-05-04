@@ -12,17 +12,18 @@ v-container(v-else)
           span(v-else) :&nbsp;
         span {{ paper.title }},&nbsp;
         span {{ paper.journal }},&nbsp;
-        span(v-if='paper.volume') {{ paper.volume }},&nbsp;
-        span(v-if='paper.number') {{ paper.number }},&nbsp;
-        span(v-if='paper.issue') {{ paper.issue }},&nbsp;
+        span(v-if='paper.volume') Vol. {{ paper.volume }},&nbsp;
+        span(v-if='paper.number') No. {{ paper.number }},&nbsp;
+        span(v-if='paper.issue') Issue {{ paper.issue }},&nbsp;
         span pp. {{ paper.pageFrom }}&ndash;
         span {{ paper.pageTo }},&nbsp;
         span ({{ formatDate(paper.date) }}).&nbsp;
-        span [
-        a(:href='paper.url', target='_blank', rel='noopener noreferrer') {{ paper.publisher }}
-        span ]
+        span
+          span [
+          a(:href='paper.url', target='_blank', rel='noopener noreferrer') {{ paper.publisher }}
+          span ]
 
-    v-divider.mt-6
+  v-divider.my-4
 
   v-container
     h2 国際会議等発表論文 / International conference paper
@@ -40,9 +41,37 @@ v-container(v-else)
         span ({{ formatDate(paper.date) }}).&nbsp;
         span.award {{ paper.award }}&nbsp;
         span.acceptance-rate(v-if='paper.acceptanceRate') ({{ `Acceptance rate: ${paper.acceptanceRate}=${calcAcceptanceRate(paper.acceptanceRate)}%` }})&nbsp;
-        span [
-        a(:href='paper.url', target='_blank', rel='noopener noreferrer') {{ paper.publisher }}
-        span ]
+        span
+          span [
+          a(:href='paper.url', target='_blank', rel='noopener noreferrer') {{ paper.publisher }}
+          span ]
+
+  v-divider.my-4
+
+  v-container
+    h2 国内研究会等発表論文 / Domestic conference paper
+    ol
+      li(v-for='paper in publications.domesticConferencePaper')
+        span(v-for='(author, i) in paper.authors') {{ author }}
+          span(v-if='i < paper.authors.length - 1') ,&nbsp;
+          span(v-else) :&nbsp;
+        span {{ paper.title }},&nbsp;
+        span {{ paper.conference }}
+        span(v-if='paper.series') &nbsp;({{ paper.series }})
+        span(v-if='paper.volume') ,&nbsp;Vol. {{ paper.volume }}
+        span(v-if='paper.number') ,&nbsp;No. {{ paper.number }}
+        span(v-if='paper.pageFrom != paper.pageTo') , pp.&nbsp;
+          span {{ paper.pageFrom }}&ndash;
+          span {{ paper.pageTo }},&nbsp;
+        span(v-else) , p.&nbsp;
+          span {{ paper.pageFrom }},&nbsp;
+        span {{ paper.location }}&nbsp;
+        span ({{ formatDate(paper.date) }}).&nbsp;
+        span.award {{ paper.award }}&nbsp;
+        span(v-if='paper.publisher')
+          span [
+          a(:href='paper.url', target='_blank', rel='noopener noreferrer') {{ paper.publisher }}
+          span ]
 </template>
 
 <script lang="ts">
@@ -78,10 +107,27 @@ interface internationalConferencePaper {
   url: string
 }
 
+interface domesticConferencePaper {
+  authors: string[]
+  title: string
+  conference: string
+  series: string | null
+  volume: string | null
+  number: Number | null
+  pageFrom: Number
+  pageTo: Number
+  location: string
+  date: string
+  award: string | null
+  publisher: string | null
+  url: string | null
+}
+
 export type DataType = {
   publications: {
     journalPaper: journalPaper[]
     internationalConferencePaper: internationalConferencePaper[]
+    domesticConferencePaper: domesticConferencePaper[]
   }
 }
 
@@ -153,6 +199,116 @@ export default Vue.extend({
             acceptanceRate: '24/88',
             publisher: 'ACM',
             url: 'https://doi.org/10.1145/3460421.3478823',
+          },
+        ],
+        domesticConferencePaper: [
+          {
+            authors: ['藤井敦寛', '村尾和哉'],
+            title: '圧カセンサ搭載ヘルメットを用いた個人識別手法の提案',
+            conference: 'ユビキタスウェアラブルワークショップ2019論文集',
+            series: 'UWW 2019',
+            volume: null,
+            number: null,
+            pageFrom: 49,
+            pageTo: 49,
+            location: '兵庫',
+            date: '2019-12-21',
+            award: null,
+            publisher: null,
+            url: null,
+          },
+          {
+            authors: ['藤井敦寛', '村尾和哉'],
+            title: '圧力センサ搭載ヘルメットを用いた個人識別手法',
+            conference:
+              '情報処理学会マルチメディア，分散，協調とモバイルシンポジウム論文集',
+            series: 'DICOMO 2020',
+            volume: '2020',
+            number: null,
+            pageFrom: 1215,
+            pageTo: 1222,
+            location: 'オンライン',
+            date: '2020-06-26',
+            award: '最優秀プレゼンテーション賞，優秀論文賞',
+            publisher: '情報学広場',
+            url: 'http://id.nii.ac.jp/1001/00210783/',
+          },
+          {
+            authors: ['藤井敦寛', '村尾和哉'],
+            title: 'ディスプレイを用いた擬似的脈波生成手法の検討',
+            conference: 'ユビキタスウェアラブルワークショップ2020論文集',
+            series: 'UWW 2020',
+            volume: null,
+            number: null,
+            pageFrom: 39,
+            pageTo: 39,
+            location: '兵庫',
+            date: '2020-12-13',
+            award: null,
+            publisher: null,
+            url: null,
+          },
+          {
+            authors: ['藤井敦寛', '村尾和哉'],
+            title: 'ディスプレイを用いた脈波生成手法の検討',
+            conference: 'インタラクション2021論文集',
+            series: null,
+            volume: null,
+            number: null,
+            pageFrom: 475,
+            pageTo: 478,
+            location: 'オンライン',
+            date: '2021-03-01',
+            award: null,
+            publisher: 'インタラクション2021',
+            url: 'https://www.interaction-ipsj.org/proceedings/2021/data/bib/3A10.html',
+          },
+          {
+            authors: ['藤井敦寛', '村尾和哉'],
+            title:
+              'ディスプレイを用いて光電脈波センサに任意の脈波を計測させる手法の提案',
+            conference:
+              '情報処理学会マルチメディア，分散，協調とモバイルシンポジウム論文集',
+            series: 'DICOMO 2021',
+            volume: '2021',
+            number: 1,
+            pageFrom: 702,
+            pageTo: 708,
+            location: 'オンライン',
+            date: '2021-07-01',
+            award: null,
+            publisher: '情報学広場',
+            url: 'http://id.nii.ac.jp/1001/00212888/',
+          },
+          {
+            authors: ['藤井敦寛', '村尾和哉'],
+            title: '注水音を用いた容器内水位推定手法の提案',
+            conference: 'ユビキタスウェアラブルワークショップ2021論文集',
+            series: 'UWW 2021',
+            volume: null,
+            number: null,
+            pageFrom: 49,
+            pageTo: 49,
+            location: '兵庫',
+            date: '2021-12-20',
+            award: null,
+            publisher: null,
+            url: null,
+          },
+          {
+            authors: ['藤井敦寛', '村尾和哉'],
+            title: '注水音を用いた容器内水位推定手法',
+            conference: '研究報告ユビキタスコンピューティングシステム',
+            series: 'UBI 73',
+            volume: '2022-UBI-73',
+            number: 18,
+            pageFrom: 1,
+            pageTo: 8,
+            location: 'オンライン',
+            date: '2022-03-07',
+            award: null,
+            publisher: '情報学広場',
+            url: 'http://id.nii.ac.jp/1001/00216626/',
           },
         ],
       },
