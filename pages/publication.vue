@@ -4,7 +4,7 @@ v-container(dark, v-if='true')
 
 v-container(v-else)
   v-container
-    h2 学術論文誌発表論文 / Journal paper
+    h2.text-h6.font-weight-bold.mb-4 学術論文誌発表論文 / Journal paper
     ol
       li(v-for='publication in publications.journalPaper')
         span(v-for='(author, i) in publication.authors') {{ author }}
@@ -17,7 +17,7 @@ v-container(v-else)
         span(v-if='publication.issue') {{ publication.issue }},&nbsp;
         span pp. {{ publication.pageFrom }}&ndash;
         span {{ publication.pageTo }},&nbsp;
-        span {{ publication.date }} [
+        span {{ formatDate(publication.date) }} [
         a(
           :href='publication.link.url',
           target='_blank',
@@ -28,6 +28,7 @@ v-container(v-else)
 
 <script lang="ts">
 import Vue from 'vue'
+import dayjs from 'dayjs'
 
 export type DataType = {
   publications: {
@@ -80,6 +81,11 @@ export default Vue.extend({
     return {
       title: '業績',
     }
+  },
+  methods: {
+    formatDate(date: string): string {
+      return dayjs(date).format('MMM. YYYY')
+    },
   },
 })
 </script>
