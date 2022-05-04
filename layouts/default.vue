@@ -46,7 +46,7 @@ export default Vue.extend({
         {
           icon: 'mdi-book-open',
           title: 'Publications',
-          to: '/publication',
+          to: '/publications',
         },
       ],
     }
