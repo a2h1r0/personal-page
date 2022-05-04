@@ -5,17 +5,25 @@ v-container(dark, v-if='true')
 v-container(v-else)
   v-container
     h2 学術論文誌発表論文 / Journal paper
-    v-list(color='dark')
-      v-list-item(v-for='publication in publications.journalPaper')
-        span(v-for='author in publication.authors') {{ author }}:&nbsp;
+    ol
+      li(v-for='publication in publications.journalPaper')
+        span(v-for='(author, i) in publication.authors') {{ author }}
+          span(v-if='i < publication.authors.length - 1') ,&nbsp;
+          span(v-else) :&nbsp;
         span {{ publication.title }},&nbsp;
         span {{ publication.book }},&nbsp;
         span(v-if='publication.volume') {{ publication.volume }},&nbsp;
         span(v-if='publication.number') {{ publication.number }},&nbsp;
         span(v-if='publication.issue') {{ publication.issue }},&nbsp;
-        span {{ publication.pageFrom }}&ndash;
+        span pp. {{ publication.pageFrom }}&ndash;
         span {{ publication.pageTo }},&nbsp;
-        span {{ publication.date }}
+        span {{ publication.date }} [
+        a(
+          :href='publication.link.url',
+          target='_blank',
+          rel='noopener noreferrer'
+        ) {{ publication.link.text }}
+        span ]
 </template>
 
 <script lang="ts">
@@ -34,6 +42,10 @@ export type DataType = {
         pageFrom: Number
         pageTo: Number
         date: string
+        link: {
+          text: string
+          url: string
+        }
       }
     ]
   }
@@ -45,15 +57,20 @@ export default Vue.extend({
       publications: {
         journalPaper: [
           {
-            authors: ['me'],
-            title: 'test',
-            book: 'book',
-            volume: 1,
-            number: 2,
+            authors: ['A. Fujii', 'K. Murao'],
+            title:
+              'User Identification Method based on Head Shape Using Pressure Sensors Embedded in a Helmet',
+            book: 'Journal of Information Processing',
+            volume: 29,
+            number: null,
             issue: null,
-            pageFrom: 10,
-            pageTo: 100,
-            date: '2022-01-01',
+            pageFrom: 610,
+            pageTo: 619,
+            date: '2021-10-15',
+            link: {
+              text: 'J-STAGE',
+              url: 'https://doi.org/10.2197/ipsjjip.29.610',
+            },
           },
         ],
       },
