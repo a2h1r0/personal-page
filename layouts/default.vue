@@ -1,23 +1,16 @@
 <template lang="pug">
 v-app(dark)
-  v-navigation-drawer(
-    app,
-    permanent,
-    fixed,
-    :mini-variant='$vuetify.breakpoint.xs'
-  )
-    v-list
-      v-list-item(
+  v-app-bar(app, fixed, dark)
+    v-tabs(centered, icons-and-text)
+      v-tab(
         v-for='page in pages',
         :key='page.to',
         :to='page.to',
         router,
         exact
       )
-        v-list-item-action
-          v-icon {{ page.icon }}
-        v-list-item-content
-          v-list-item-title(v-text='page.title')
+        | {{ page.title }}
+        v-icon {{ page.icon }}
 
   v-main
     v-container.mb-8
@@ -75,6 +68,10 @@ export default Vue.extend({
 		font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
 
 	overflow-wrap break-word
+
+	.v-main
+		max-width 900px
+		margin 0 auto
 
 	#footer
 		position absolute
