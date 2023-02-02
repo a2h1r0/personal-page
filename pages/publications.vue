@@ -69,6 +69,18 @@ v-container
           span [
           a(:href='paper.url', target='_blank', rel='noopener noreferrer') {{ paper.publisher }}
           span ]
+
+  v-divider.my-4
+
+  v-container
+    h2 卒業論文 / Bachelor thesis
+    ol
+      li 圧力センサ搭載ヘルメットを用いた本人認証手法の提案
+
+  v-container
+    h2 修士論文 / Master thesis
+    ol
+      li Pulse Wave Generation Method for PPG by using Display
 </template>
 
 <script lang="ts">
