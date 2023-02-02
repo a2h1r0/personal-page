@@ -197,6 +197,22 @@ export default Vue.extend({
             publisher: 'ACM',
             url: 'https://doi.org/10.1145/3460421.3478823',
           },
+          {
+            authors: ['A. Fujii', 'K. Yoshida', 'K. Shirai', 'K. Murao'],
+            title:
+              'Bento Packaging Activity Recognition with Convolutional LSTM Using Autocorrelation Function and Majority Vote',
+            bookTitle:
+              'Sensor- and Video-Based Activity and Behavior Computing',
+            series: 'ABC 2021',
+            pageFrom: 237,
+            pageTo: 247,
+            location: 'Online',
+            date: '2022-05-04',
+            award: null,
+            acceptanceRate: null,
+            publisher: 'Springer',
+            url: 'https://doi.org/10.1007/978-981-19-0361-8_16',
+          },
         ],
         domesticConferencePaper: [
           {
