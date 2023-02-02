@@ -1,6 +1,6 @@
 <template lang="pug">
 v-app(dark)
-  v-app-bar(app, fixed, dark)
+  v-app-bar(app, fixed)
     v-tabs(centered, icons-and-text)
       v-tab(
         v-for='page in pages',
@@ -51,33 +51,33 @@ export default Vue.extend({
 @import url('https://fonts.googleapis.com/css?family=Nunito')
 
 ::-webkit-scrollbar
-	width 10px
+  width 10px
 
 ::-webkit-scrollbar-track
-	border-radius 10px
-	box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
+  border-radius 10px
+  box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
 
 ::-webkit-scrollbar-thumb
-	background-color #c0c0c0
-	border-radius 10px
-	box-shadow 0 0 0 1px rgba(255, 255, 255, 0.3)
+  background-color #c0c0c0
+  border-radius 10px
+  box-shadow 0 0 0 1px rgba(255, 255, 255, 0.3)
 
 #app
-	font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
-	[class^='text-']
-		font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
+  font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
+  [class^='text-']
+    font-family 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important
 
-	overflow-wrap break-word
+  overflow-wrap break-word
 
-	.v-main
-		max-width 900px
-		margin 0 auto
+  .v-main
+    max-width 900px
+    margin 0 auto
 
-	#footer
-		position absolute
-		bottom 0
-		left 50%
-		transform translateX(-50%)
-		-webkit-transform translateX(-50%)
-		-ms-transform translateX(-50%)
+  #footer
+    position absolute
+    bottom 0
+    left 50%
+    transform translateX(-50%)
+    -webkit-transform translateX(-50%)
+    -ms-transform translateX(-50%)
 </style>
