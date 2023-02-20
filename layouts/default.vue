@@ -41,6 +41,11 @@ export default Vue.extend({
           title: 'Publications',
           to: '/publications',
         },
+        // {
+        //   icon: 'mdi-briefcase',
+        //   title: 'Contributions',
+        //   to: '/contributions',
+        // },
       ],
     }
   },
