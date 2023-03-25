@@ -1,6 +1,19 @@
 <template lang="pug">
 v-container
   v-container
+    h2 著者情報 / Author information
+    a(href='https://orcid.org/0000-0002-9292-2912')
+      img.mr-2(
+        alt='ORCID logo',
+        src='https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png',
+        width='16',
+        height='16'
+      )
+      | 0000-0002-9292-2912
+
+  v-divider.my-4
+
+  v-container
     h2 学術論文誌発表論文 / Journal paper
     ol
       li(v-for='paper in publications.journalPaper')
@@ -159,7 +172,6 @@ export default Vue.extend({
             publisher: 'J-STAGE',
             url: 'https://doi.org/10.2197/ipsjjip.29.610',
           },
-
           {
             authors: ['A. Fujii', 'K. Murao', 'N. Matsuhisa'],
             title: 'Pulse Wave Generation Method for PPG by using Display',
