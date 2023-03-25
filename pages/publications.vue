@@ -159,6 +159,20 @@ export default Vue.extend({
             publisher: 'J-STAGE',
             url: 'https://doi.org/10.2197/ipsjjip.29.610',
           },
+
+          {
+            authors: ['A. Fujii', 'K. Murao', 'N. Matsuhisa'],
+            title: 'Pulse Wave Generation Method for PPG by using Display',
+            journal: 'IEEE Access',
+            volume: null,
+            number: null,
+            issue: null,
+            pageFrom: 1,
+            pageTo: 1,
+            date: '2023-03-24',
+            publisher: 'IEEE',
+            url: 'https://doi.org/10.1109/ACCESS.2023.3260862',
+          },
         ],
         internationalConferencePaper: [
           {
