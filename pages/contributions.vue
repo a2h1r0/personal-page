@@ -1,10 +1,10 @@
 <template lang="pug">
 v-container
-  v-container
-    h2 hoge
-    p hoge app
+  section
+    v-img.mr-auto.mb-4(src='share_info.svg', max-width='250px', contain)
+    p 株式会社Coolwareが運営する簡単に投稿型サイトが開設できるWebサービス．
 
-    v-card.mx-auto(elevation='24', max-width='444')
+    v-card.mx-auto.mb-5(elevation='24', max-width='444')
       v-carousel(cycle, height='300', hide-delimiter-background)
         v-carousel-item
           v-sheet(color='green', height='100%')
@@ -21,6 +21,10 @@ v-container
             .d-flex.fill-height.justify-center.align-center
               .text-h2
                 | Third Slide
+
+    | 期間： 2020年2月&ndash;2022年3月
+    br
+    | 役割： エンジニア
 
   v-divider.my-4
 
