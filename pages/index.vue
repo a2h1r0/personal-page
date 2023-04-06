@@ -29,13 +29,13 @@ v-container
     br
     | 立命館大学情報理工学部情報システム学科 卒業（指導教員：
     a(href='http://www.muraokazuya.net/', target='_blank') 村尾和哉
-    | 准教授）
+    | 教授）
   p
     | Apr. 2020–Mar. 2022
     br
     | 立命館大学大学院情報理工学研究科博士課程前期課程 修了（指導教員：
     a(href='http://www.muraokazuya.net/', target='_blank') 村尾和哉
-    | 准教授）
+    | 教授）
     br
     | 修士（工学）
 </template>
