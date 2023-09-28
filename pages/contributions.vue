@@ -1,36 +1,44 @@
 <template lang="pug">
 v-container
-  section
-    v-img.mr-auto.mb-4(src='share_info.svg', max-width='250px', contain)
-    p 株式会社Coolwareが運営する簡単に投稿型サイトが開設できるWebサービス．
+  article
+    v-timeline
+      section
+        v-timeline-item(small, fill-dot)
+          template(v-slot:opposite)
+            span.headline.font-weight-bold 2020
 
-    v-card.mx-auto.mb-5(elevation='24', max-width='444')
-      v-carousel(cycle, height='300', hide-delimiter-background)
-        v-carousel-item
-          v-sheet(color='green', height='100%')
-            .d-flex.fill-height.justify-center.align-center
-              .text-h2
-                | First Slide
-        v-carousel-item
-          v-sheet(color='secondary', height='100%')
-            .d-flex.fill-height.justify-center.align-center
-              .text-h2
-                | Second Slide
-        v-carousel-item
-          v-sheet(color='yellow darken-4', height='100%')
-            .d-flex.fill-height.justify-center.align-center
-              .text-h2
-                | Third Slide
+          a(
+            href='https://theshare.info/',
+            target='_blank',
+            rel='noopener noreferrer'
+          )
+            v-img.mr-auto.mb-4(
+              src='share_info.svg',
+              max-width='250px',
+              contain
+            )
+          p
+            a(
+              href='https://coolware.jp/',
+              target='_blank',
+              rel='noopener noreferrer'
+            ) 株式会社Coolware
+            | が運営する簡単に投稿型サイトが開設できるWebサービス．
+            br
+            | フォーラム，Q&Aのような掲示板，まとめサイトやマッチングサイトを簡単作成できる．
+            br
+            | 無料試用から法人様向け
+            a(
+              href='https://theshare.info/biz/',
+              target='_blank',
+              rel='noopener noreferrer'
+            ) Biz プラン
+            | まで５種類のプランから選択可能．
 
-    | 期間： 2020年2月&ndash;2022年3月
-    br
-    | 役割： エンジニア
-
-  v-divider.my-4
-
-  v-container
-    h2 hoge2
-    p hoge2 app
+          p
+            | 期間： 2020年2月&ndash;2022年3月
+            br
+            | 役割： エンジニア
 </template>
 
 <script lang="ts">
