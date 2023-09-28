@@ -1,7 +1,29 @@
 <template lang="pug">
 v-container
   article
+    section
+      p.text-center これまでに携わってきたアプリケーション．
+
     v-timeline
+      section
+        v-timeline-item(small, fill-dot)
+          template(v-slot:opposite)
+            span.headline.font-weight-bold 2023
+
+          a(
+            href='https://www.gilgiltown.co.jp/',
+            target='_blank',
+            rel='noopener noreferrer'
+          )
+            v-img.mr-auto.mb-4(src='gilgiltown.ico', max-width='40px', contain)
+          p
+            a(
+              href='https://www.gilgiltown.co.jp/',
+              target='_blank',
+              rel='noopener noreferrer'
+            ) 株式会社ギルギルタウン
+            | の社内利用のための動画共有およびアンケートアプリケーション．
+
       section
         v-timeline-item(small, fill-dot)
           template(v-slot:opposite)
@@ -34,11 +56,6 @@ v-container
               rel='noopener noreferrer'
             ) Biz プラン
             | まで５種類のプランから選択可能．
-
-          p
-            | 期間： 2020年2月&ndash;2022年3月
-            br
-            | 役割： エンジニア
 </template>
 
 <script lang="ts">
