@@ -11,6 +11,29 @@ v-container
             span.headline.font-weight-bold 2023
 
           a(
+            href='https://grant-terminal.com/',
+            target='_blank',
+            rel='noopener noreferrer'
+          )
+            v-img.mr-auto.mb-4(
+              src='grant-terminal.png',
+              max-width='250px',
+              contain
+            )
+          p
+            a(
+              href='https://www.techterminal.co.jp/',
+              target='_blank',
+              rel='noopener noreferrer'
+            ) 株式会社テックターミナル
+            | による，研究者向けに特化した補助金を一括検索できるサービス．
+
+      section
+        v-timeline-item(small, fill-dot)
+          template(v-slot:opposite)
+            span.headline.font-weight-bold 2023
+
+          a(
             href='https://www.gilgiltown.co.jp/',
             target='_blank',
             rel='noopener noreferrer'
