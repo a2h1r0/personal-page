@@ -21,7 +21,7 @@ v-container
                 rel='noopener noreferrer'
               )
                 v-img.mr-auto.mb-4(
-                  src='./grant-terminal.png',
+                  src='/grant-terminal.png',
                   max-width='250px',
                   contain
                 )
@@ -49,7 +49,7 @@ v-container
                 rel='noopener noreferrer'
               )
                 v-img.mr-auto.mb-4(
-                  src='./gilgiltown.ico',
+                  src='/gilgiltown.ico',
                   max-width='40px',
                   contain
                 )
@@ -77,7 +77,7 @@ v-container
                 rel='noopener noreferrer'
               )
                 v-img.mr-auto.mb-4(
-                  src='./share_info.svg',
+                  src='/share_info.svg',
                   max-width='250px',
                   contain
                 )
