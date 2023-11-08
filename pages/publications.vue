@@ -2,7 +2,11 @@
 v-container
   v-container
     h2 著者情報 / Author information
-    a(href='https://orcid.org/0000-0002-9292-2912')
+    a(
+      href='https://orcid.org/0000-0002-9292-2912',
+      target='_blank',
+      rel='noopener noreferrer'
+    )
       img.mr-2(
         alt='ORCID logo',
         src='https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png',

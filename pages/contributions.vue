@@ -2,7 +2,39 @@
 v-container
   article
     section
-      p.text-center ここに技術のバッジとかGitHubとか入れる．
+      v-container
+        v-row.mt-4.mb-8(justify='center')
+          a.text-h4.white--text.text-decoration-none(
+            href='https://github.com/a2h1r0',
+            target='_blank',
+            rel='noopener noreferrer'
+          )
+            img.mr-4(src='/github.svg', width='40px')
+            | a2h1r0
+
+        v-row.mb-8
+          v-col
+            v-img(src='/html.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/css.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/javascript.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/typescript.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/vue.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/firebase.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/php.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/laravel.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/python.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/scikit-learn.svg', max-height='45px', contain)
+          v-col
+            v-img(src='/pytorch.svg', max-height='45px', contain)
 
     v-timeline(dense)
       section
