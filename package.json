@@ -12,6 +12,7 @@
   "devDependencies": {
     "@invictus.codes/nuxt-vuetify": "^0.3.0",
     "@nuxt/devtools": "latest",
+    "dayjs-nuxt": "^2.1.9",
     "nuxt": "^3.8.1",
     "sass": "^1.69.5",
     "stylus": "^0.61.0",
