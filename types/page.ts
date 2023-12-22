@@ -21,14 +21,35 @@ interface Page {
 
 export interface Pages {
   index: Page
+  publications: Page
 }
 
 export const pages: Pages = {
   index: {
-    name: 'ホーム',
+    name: 'index',
     path: '/',
     head: {
       title: 'Atsuhiro Fujii',
+      meta: [
+        {
+          name: 'description',
+          content: "藤井敦寛の個人ページです． / This page is Atsuhiro Fujii's personal page."
+        }
+      ],
+      script: [
+        {
+          type: 'text/javascript',
+          async: true,
+          src: 'https://platform.twitter.com/widgets.js'
+        }
+      ]
+    }
+  },
+  publications: {
+    name: 'publications',
+    path: '/',
+    head: {
+      title: '業績',
       meta: [
         {
           name: 'description',

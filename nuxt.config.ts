@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    '@invictus.codes/nuxt-vuetify'
+    '@invictus.codes/nuxt-vuetify',
+    'dayjs-nuxt'
   ],
 
   vuetify: {
@@ -12,7 +13,7 @@ export default defineNuxtConfig({
       useIconCDN: true,
       styles: 'sass',
       autoImport: true,
-      useVuetifyLabs: true, 
+      useVuetifyLabs: true,
     }
   }
 })
