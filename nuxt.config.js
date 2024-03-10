@@ -43,6 +43,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    'nuxt-gtag',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -73,6 +74,10 @@ export default {
         },
       },
     },
+  },
+
+  gtag: {
+    id: process.env.GA4_ID,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
