@@ -40,7 +40,8 @@ jobs:
 
       - name: Build 🔨
         run: npm run generate
-        env: GA4_ID: ${{ secrets.GA4_ID }}
+        env:
+          GA4_ID: ${{ secrets.GA4_ID }}
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
