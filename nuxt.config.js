@@ -77,7 +77,7 @@ export default {
   },
 
   'google-gtag': {
-    id: process.env.GA4_ID,
+    id: 'G-V5MCKWYYMF',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
