@@ -43,7 +43,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/google-analytics',
+    '@nuxtjs/google-gtag',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -76,7 +76,7 @@ export default {
     },
   },
 
-  googleAnalytics: {
+  'google-gtag': {
     id: process.env.GA4_ID,
   },
 
