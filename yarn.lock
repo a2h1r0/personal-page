@@ -1840,13 +1840,6 @@
     "consola" "^2.15.0"
     "eslint-webpack-plugin" "^2.4.1"
 
-"@nuxtjs/google-analytics@^2.4.0":
-  "integrity" "sha512-rDQTwHIjyjVrx8GywHPuWykJ3jRFGaHl5Iqji/y8tQWUc0yGEeHxOoR0yimzxnTS1Ph2/PubQYpgnVeEPEdL/A=="
-  "resolved" "https://registry.npmjs.org/@nuxtjs/google-analytics/-/google-analytics-2.4.0.tgz"
-  "version" "2.4.0"
-  dependencies:
-    "vue-analytics" "^5.22.1"
-
 "@nuxtjs/proxy@^2.1.0":
   "integrity" "sha512-/qtoeqXgZ4Mg6LRg/gDUZQrFpOlOdHrol/vQYMnKu3aN3bP90UfOUB3QSDghUUK7OISAJ0xp8Ld78aHyCTcKCQ=="
   "resolved" "https://registry.npmjs.org/@nuxtjs/proxy/-/proxy-2.1.0.tgz"
@@ -9944,11 +9937,6 @@
   "integrity" "sha1-YU9/v42AHwu18GYfWy9XhXUOTwk="
   "resolved" "https://registry.npmjs.org/void-elements/-/void-elements-3.1.0.tgz"
   "version" "3.1.0"
-
-"vue-analytics@^5.22.1":
-  "integrity" "sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ=="
-  "resolved" "https://registry.npmjs.org/vue-analytics/-/vue-analytics-5.22.1.tgz"
-  "version" "5.22.1"
 
 "vue-client-only@^2.1.0":
   "integrity" "sha512-vKl1skEKn8EK9f8P2ZzhRnuaRHLHrlt1sbRmazlvsx6EiC3A8oWF8YCBrMJzoN+W3OnElwIGbVjsx6/xelY1AA=="
