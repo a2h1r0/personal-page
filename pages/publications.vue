@@ -196,7 +196,7 @@ export default Vue.extend({
             title:
               'Cooking Activity Recognition with Convolutional LSTM Using Multi-label Loss Function and Majority Vote',
             bookTitle:
-              'in Proc. of International Conference on Activity and Behavior Computing',
+              'in Proc. of the International Conference on Activity and Behavior Computing',
             series: 'ABC 2020',
             pageFrom: 91,
             pageTo: 101,
@@ -228,7 +228,7 @@ export default Vue.extend({
             title:
               'disp2ppg: Pulse Wave Generation to PPG Sensor using Display',
             bookTitle:
-              'in Proc. of the 25th International Symposium on Wearable Computers',
+              'in Proc. of the 2021 ACM International Symposium on Wearable Computers',
             series: 'ISWC 2021',
             pageFrom: 119,
             pageTo: 123,
@@ -244,7 +244,7 @@ export default Vue.extend({
             title:
               'Bento Packaging Activity Recognition with Convolutional LSTM Using Autocorrelation Function and Majority Vote',
             bookTitle:
-              'Sensor- and Video-Based Activity and Behavior Computing',
+              'in Proc. of the 3rd International Conference on Activity and Behavior Computing',
             series: 'ABC 2021',
             pageFrom: 237,
             pageTo: 247,
