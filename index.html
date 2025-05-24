@@ -123,7 +123,12 @@
     </main>
 
     <footer class="flex justify-center text-gray-400 text-sm">
-      Copyright © 2022–2024 Atsuhiro Fujii
+      Copyright © 2022–<span id="current-year"></span>&nbsp;Atsuhiro Fujii
     </footer>
   </body>
+
+  <script>
+    document.getElementById('current-year').textContent =
+      new Date().getFullYear();
+  </script>
 </html>
