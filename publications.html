@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Atsuhiro Fujii</title>
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <title>業績 - Atsuhiro Fujii</title>
+    <link rel="stylesheet" href="style.css" />
     <meta name="description" content="" />
 
     <meta property="og:title" content="" />
@@ -16,10 +16,284 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
 
     <link rel="manifest" href="site.webmanifest" />
-    <meta name="theme-color" content="#fafafa" />
+    <meta name="theme-color" content="#84adbf" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V5MCKWYYMF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-V5MCKWYYMF');
+    </script>
   </head>
 
-  <body>
-    <p>test</p>
+  <body class="bg-gray-100 text-gray-800">
+    <header class="fixed top-0 left-0 right-0 bg-gray-700 text-white shadow-lg">
+      <nav class="container mx-auto">
+        <div class="flex justify-center space-x-8 py-4">
+          <a
+            href="index.html"
+            class="flex items-center space-x-2 hover:text-gray-300"
+          >
+            <i class="mdi mdi-home"></i>
+            <span>Top page</span>
+          </a>
+          <a
+            href="publications.html"
+            class="flex items-center space-x-2 hover:text-gray-300"
+          >
+            <i class="mdi mdi-book-open"></i>
+            <span>Publications</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-16 w-4xl">
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4">著者情報 / Author information</h2>
+        <a
+          href="https://orcid.org/0000-0002-9292-2912"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center"
+        >
+          <img
+            class="mr-2"
+            alt="ORCID logo"
+            src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png"
+            width="16"
+            height="16"
+          />
+          0000-0002-9292-2912
+        </a>
+      </div>
+
+      <hr class="my-4 border-gray-700" />
+
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4">
+          学術論文誌発表論文 / Journal paper
+        </h2>
+        <ol class="list-decimal pl-6 space-y-4 text-sm">
+          <li>
+            A. Fujii, K. Murao: User Identification Method based on Head Shape
+            Using Pressure Sensors Embedded in a Helmet, Journal of Information
+            Processing, Vol. 29, pp. 610–619, (Oct. 2021). [<a
+              href="https://doi.org/10.2197/ipsjjip.29.610"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >J-STAGE</a
+            >]
+          </li>
+          <li>
+            A. Fujii, K. Murao, N. Matsuhisa: Pulse Wave Generation Method for
+            PPG by Using Display, IEEE Access, Vol. 11, pp. 31199–31211, (Mar.
+            2023). [<a
+              href="https://doi.org/10.1109/ACCESS.2023.3260862"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >IEEE</a
+            >]
+          </li>
+        </ol>
+      </div>
+
+      <hr class="my-4 border-gray-700" />
+
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4">
+          国際会議等発表論文 / International conference paper
+        </h2>
+        <ol class="list-decimal pl-6 space-y-4 text-sm">
+          <li>
+            A. Fujii, D. Kajiwara, K. Murao: Cooking Activity Recognition with
+            Convolutional LSTM Using Multi-label Loss Function and Majority
+            Vote, in Proc. of the International Conference on Activity and
+            Behavior Computing (ABC 2020), pp. 91–101, Fukuoka, Japan (Nov.
+            2020). [<a
+              href="https://doi.org/10.1007/978-981-15-8269-1_8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >Springer</a
+            >]
+          </li>
+          <li>
+            A. Fujii, K. Murao: User Identification Method Based on Head Shape
+            Using a Helmet with Pressure Sensors, in Proc. of the 18th
+            International Conference on Advances in Mobile Computing &
+            Multimedia (MoMM 2020), pp. 210–214, Virtual (Nov. 2020). [<a
+              href="https://doi.org/10.1145/3428690.3429158"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >ACM</a
+            >]
+          </li>
+          <li>
+            A. Fujii, K. Murao, N. Matsuhisa: disp2ppg: Pulse Wave Generation to
+            PPG Sensor using Display, in Proc. of the 2021 ACM International
+            Symposium on Wearable Computers (ISWC 2021), pp. 119–123, Virtual
+            (Sep. 2021).
+            <span class="text-red-500">(Acceptance rate: 24/88=27.3%)</span> [<a
+              href="https://doi.org/10.1145/3460421.3478823"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >ACM</a
+            >]
+          </li>
+          <li>
+            A. Fujii, K. Yoshida, K. Shirai, K. Murao: Bento Packaging Activity
+            Recognition with Convolutional LSTM Using Autocorrelation Function
+            and Majority Vote, in Proc. of the 3rd International Conference on
+            Activity and Behavior Computing (ABC 2021), pp. 237–247, Online (May
+            2022). [<a
+              href="https://doi.org/10.1007/978-981-19-0361-8_16"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >Springer</a
+            >]
+          </li>
+          <li>
+            A. Fujii, K. Murao: Water Level Recognition by Analyzing the Sound
+            when Pouring Water, UbiComp/ISWC2024 Adjunct (HASCA 2024), pp.
+            464–469, Melbourne VIC, Australia (Oct. 2024). [<a
+              href="https://doi.org/10.1145/3675094.3678440"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >ACM</a
+            >]
+          </li>
+        </ol>
+      </div>
+
+      <hr class="my-4 border-gray-700" />
+
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4">
+          国内研究会等発表論文 / Domestic conference paper
+        </h2>
+        <ol class="list-decimal pl-6 space-y-4 text-sm">
+          <li>
+            藤井敦寛, 村尾和哉:
+            圧カセンサ搭載ヘルメットを用いた個人識別手法の提案,
+            ユビキタスウェアラブルワークショップ2019論文集 (UWW 2019), p. 49,
+            兵庫 (Dec. 2019).
+          </li>
+          <li>
+            藤井敦寛, 村尾和哉: 圧力センサ搭載ヘルメットを用いた個人識別手法,
+            情報処理学会マルチメディア，分散，協調とモバイルシンポジウム論文集
+            (DICOMO 2020), Vol. 2020, pp. 1215–1222, オンライン (Jun. 2020).
+            <span class="text-red-500 font-bold"
+              >最優秀プレゼンテーション賞，優秀論文賞</span
+            >
+            [<a
+              href="http://id.nii.ac.jp/1001/00210783/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >情報学広場</a
+            >]
+          </li>
+          <li>
+            藤井敦寛, 村尾和哉: ディスプレイを用いた擬似的脈波生成手法の検討,
+            ユビキタスウェアラブルワークショップ2020論文集 (UWW 2020), p. 39,
+            兵庫 (Dec. 2020).
+          </li>
+          <li>
+            藤井敦寛, 村尾和哉: ディスプレイを用いた脈波生成手法の検討,
+            インタラクション2021論文集, pp. 475–478, オンライン (Mar. 2021). [<a
+              href="https://www.interaction-ipsj.org/proceedings/2021/data/bib/3A10.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >インタラクション2021</a
+            >]
+          </li>
+          <li>
+            藤井敦寛, 村尾和哉:
+            ディスプレイを用いて光電脈波センサに任意の脈波を計測させる手法の提案,
+            情報処理学会マルチメディア，分散，協調とモバイルシンポジウム論文集
+            (DICOMO 2021), Vol. 2021, No. 1, pp. 702–708, オンライン (Jul.
+            2021). [<a
+              href="http://id.nii.ac.jp/1001/00212888/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >情報学広場</a
+            >]
+          </li>
+          <li>
+            藤井敦寛, 村尾和哉: 注水音を用いた容器内水位推定手法の提案,
+            ユビキタスウェアラブルワークショップ2021論文集 (UWW 2021), p. 49,
+            兵庫 (Dec. 2021).
+          </li>
+          <li>
+            藤井敦寛, 村尾和哉: 注水音を用いた容器内水位推定手法,
+            研究報告ユビキタスコンピューティングシステム (UBI 73), Vol.
+            2022-UBI-73, No. 18, pp. 1–8, オンライン (Mar. 2022). [<a
+              href="http://id.nii.ac.jp/1001/00216626/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >情報学広場</a
+            >]
+          </li>
+          <li>
+            藤井敦寛, 村尾和哉: 視線情報を用いた酒酔い状態識別手法の検討,
+            ユビキタスウェアラブルワークショップ2024論文集 (UWW 2024), p. 36,
+            兵庫 (Dec. 2024).
+          </li>
+        </ol>
+      </div>
+
+      <hr class="my-4 border-gray-700" />
+
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4">卒業論文 / Bachelor thesis</h2>
+        <ol class="list-decimal pl-6 space-y-4 text-sm">
+          <li>圧力センサ搭載ヘルメットを用いた本人認証手法の提案</li>
+        </ol>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4">修士論文 / Master thesis</h2>
+        <ol class="list-decimal pl-6 space-y-4 text-sm">
+          <li>Pulse Wave Generation Method for PPG by using Display</li>
+        </ol>
+      </div>
+    </main>
+
+    <footer class="flex justify-center text-gray-400 text-sm">
+      Copyright © 2022–<span id="current-year"></span>&nbsp;Atsuhiro Fujii
+    </footer>
   </body>
+
+  <script>
+    document.getElementById('current-year').textContent =
+      new Date().getFullYear();
+  </script>
 </html>
