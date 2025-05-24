@@ -19,16 +19,3 @@ body {
     'メイリオ', sans-serif !important;
   overflow-wrap: break-word;
 }
-
-.max-w-900 {
-  max-width: 900px;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-}
