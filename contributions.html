@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Atsuhiro Fujii</title>
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <title>仕事 - Atsuhiro Fujii</title>
+    <link rel="stylesheet" href="style.css" />
     <meta name="description" content="" />
 
     <meta property="og:title" content="" />
@@ -19,6 +19,14 @@
     <meta name="theme-color" content="#fafafa" />
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -36,7 +44,264 @@
     </script>
   </head>
 
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="bg-gray-900 text-white">
+    <header class="fixed top-0 left-0 right-0 bg-gray-800 shadow-lg">
+      <nav class="container mx-auto">
+        <div class="flex justify-center space-x-8 py-4">
+          <a
+            href="index.html"
+            class="flex items-center space-x-2 hover:text-gray-300"
+          >
+            <i class="mdi mdi-home"></i>
+            <span>Top page</span>
+          </a>
+          <a
+            href="publications.html"
+            class="flex items-center space-x-2 hover:text-gray-300"
+          >
+            <i class="mdi mdi-book-open"></i>
+            <span>Publications</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-16 max-w-900">
+      <article>
+        <section>
+          <div class="flex justify-center mt-4 mb-8">
+            <a
+              href="https://github.com/a2h1r0"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-4xl text-white no-underline flex items-center"
+            >
+              <img
+                src="images/github.svg"
+                width="40"
+                class="mr-4"
+                alt="GitHub logo"
+              />
+              a2h1r0
+            </a>
+          </div>
+
+          <div class="grid grid-cols-5 gap-4 mb-8">
+            <div class="flex justify-center">
+              <img
+                src="images/html.svg"
+                class="h-11 object-contain"
+                alt="HTML5"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/css.svg"
+                class="h-11 object-contain"
+                alt="CSS3"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/javascript.svg"
+                class="h-11 object-contain"
+                alt="JavaScript"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/typescript.svg"
+                class="h-11 object-contain"
+                alt="TypeScript"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/vue.svg"
+                class="h-11 object-contain"
+                alt="Vue.js"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/firebase.svg"
+                class="h-11 object-contain"
+                alt="Firebase"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img src="images/php.svg" class="h-11 object-contain" alt="PHP" />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/laravel.svg"
+                class="h-11 object-contain"
+                alt="Laravel"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/python.svg"
+                class="h-11 object-contain"
+                alt="Python"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/scikit-learn.svg"
+                class="h-11 object-contain"
+                alt="scikit-learn"
+              />
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="images/pytorch.svg"
+                class="h-11 object-contain"
+                alt="PyTorch"
+              />
+            </div>
+          </div>
+        </section>
+
+        <div class="relative border-l-2 border-gray-700 ml-4 pl-8 space-y-8">
+          <div class="relative">
+            <div
+              class="absolute -left-10 mt-1.5 w-4 h-4 bg-gray-700 rounded-full"
+            ></div>
+            <div class="grid grid-cols-12 gap-4">
+              <div class="col-span-2">
+                <div>
+                  <span class="text-2xl font-bold">2023</span>
+                  <br />
+                  <span class="font-bold">エンジニア</span>
+                </div>
+              </div>
+              <div class="col-span-10">
+                <a
+                  href="https://grant-terminal.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <img
+                    src="images/grant-terminal.png"
+                    class="max-w-[250px] mb-4"
+                    alt="Grant Terminal"
+                  />
+                </a>
+                <span>
+                  <a
+                    href="https://www.techterminal.co.jp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 hover:underline"
+                  >
+                    株式会社テックターミナル
+                  </a>
+                  による，研究者向けに特化した補助金を一括検索できるサービス．
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -left-10 mt-1.5 w-4 h-4 bg-gray-700 rounded-full"
+            ></div>
+            <div class="grid grid-cols-12 gap-4">
+              <div class="col-span-2">
+                <div>
+                  <span class="text-2xl font-bold">2023</span>
+                  <br />
+                  <span class="font-bold">エンジニア</span>
+                </div>
+              </div>
+              <div class="col-span-10">
+                <a
+                  href="https://www.gilgiltown.co.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <img
+                    src="images/gilgiltown.ico"
+                    class="max-w-[40px] mb-4"
+                    alt="ギルギルタウン"
+                  />
+                </a>
+                <span>
+                  <a
+                    href="https://www.gilgiltown.co.jp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 hover:underline"
+                  >
+                    株式会社ギルギルタウン
+                  </a>
+                  の社内利用のための動画共有およびアンケートアプリケーション．
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -left-10 mt-1.5 w-4 h-4 bg-gray-700 rounded-full"
+            ></div>
+            <div class="grid grid-cols-12 gap-4">
+              <div class="col-span-2">
+                <div>
+                  <span class="text-2xl font-bold">2020</span>
+                  <br />
+                  <span class="font-bold">エンジニア</span>
+                </div>
+              </div>
+              <div class="col-span-10">
+                <a
+                  href="https://theshare.info/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <img
+                    src="images/share_info.svg"
+                    class="max-w-[250px] mb-4"
+                    alt="The Share"
+                  />
+                </a>
+                <span>
+                  <a
+                    href="https://coolware.jp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 hover:underline"
+                  >
+                    株式会社Coolware
+                  </a>
+                  が運営する簡単に投稿型サイトが開設できるWebサービス．
+                  <br />
+                  フォーラム，Q&Aのような掲示板，まとめサイトやマッチングサイトを簡単作成できる．
+                  <br />
+                  無料試用から法人様向け
+                  <a
+                    href="https://theshare.info/biz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 hover:underline"
+                  >
+                    Biz プラン
+                  </a>
+                  まで５種類のプランから選択可能．
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer id="footer" class="text-gray-400 text-sm">
+      Copyright © 2022–2024 Atsuhiro Fujii
+    </footer>
   </body>
 </html>
