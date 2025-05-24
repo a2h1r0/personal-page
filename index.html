@@ -18,7 +18,17 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#fafafa" />
 
+    <link href="style.css" rel="stylesheet" />
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -36,7 +46,86 @@
     </script>
   </head>
 
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="bg-gray-900 text-white">
+    <header class="fixed top-0 left-0 right-0 bg-gray-800 shadow-lg">
+      <nav class="container mx-auto">
+        <div class="flex justify-center space-x-8 py-4">
+          <a href="/" class="flex items-center space-x-2 hover:text-gray-300">
+            <i class="mdi mdi-home"></i>
+            <span>Top page</span>
+          </a>
+          <a
+            href="publications.html"
+            class="flex items-center space-x-2 hover:text-gray-300"
+          >
+            <i class="mdi mdi-book-open"></i>
+            <span>Publications</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-16 max-w-900">
+      <h1 class="text-4xl font-bold mb-8">藤井 敦寛</h1>
+
+      <p class="mb-4">
+        メールアドレスは公開しておりません．お手数ですがSNS経由でご連絡をお願い致します．<br />
+        （SNS経由でメールアドレスをお伝えすることは可能です．）
+      </p>
+      <a
+        class="twitter-mention-button"
+        href="https://twitter.com/intent/tweet?screen_name=_a2h1r0&ref_src=twsrc%5Etfw"
+        data-show-count="false"
+      >
+        Tweet to @_a2h1r0
+      </a>
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      ></script>
+
+      <hr class="my-4 border-gray-700" />
+
+      <h2 class="text-2xl font-semibold mb-2">略歴</h2>
+      <p class="mb-4">
+        1998年生まれ．2022年，立命館大学大学院情報理工学研究科博士課程前期課程修了．修士（工学）．2022年より民間企業で勤務．
+      </p>
+
+      <hr class="my-4 border-gray-700" />
+
+      <h2 class="text-2xl font-semibold mb-2">学歴</h2>
+      <p class="mb-4">
+        Apr. 2013–Mar. 2016<br />
+        大阪明星学園 明星高等学校 卒業
+      </p>
+      <p class="mb-4">
+        Apr. 2016–Mar. 2020<br />
+        立命館大学情報理工学部情報システム学科 卒業（指導教員：
+        <a
+          href="http://www.muraokazuya.net/"
+          target="_blank"
+          class="text-blue-400 hover:underline"
+          >村尾和哉</a
+        >
+        教授）
+      </p>
+      <p class="mb-4">
+        Apr. 2020–Mar. 2022<br />
+        立命館大学大学院情報理工学研究科博士課程前期課程 修了（指導教員：
+        <a
+          href="http://www.muraokazuya.net/"
+          target="_blank"
+          class="text-blue-400 hover:underline"
+          >村尾和哉</a
+        >
+        教授）<br />
+        修士（工学）
+      </p>
+    </main>
+
+    <footer id="footer" class="text-gray-400 text-sm">
+      Copyright © 2022–2024 Atsuhiro Fujii
+    </footer>
   </body>
 </html>
