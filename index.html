@@ -44,17 +44,22 @@
     </script>
   </head>
 
-  <body class="bg-gray-100 text-gray-800">
-    <header class="fixed top-0 left-0 right-0 bg-gray-700 text-white shadow-lg">
+  <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+    <header
+      class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 shadow-sm z-10"
+    >
       <nav class="container mx-auto">
         <div class="flex justify-center space-x-8 py-4">
-          <a href="/" class="flex items-center space-x-2 hover:text-gray-300">
+          <a
+            href="/"
+            class="flex items-center space-x-2 px-4 py-2 hover:text-blue-600 transition-colors"
+          >
             <i class="mdi mdi-home"></i>
             <span>Top page</span>
           </a>
           <a
             href="publications.html"
-            class="flex items-center space-x-2 hover:text-gray-300"
+            class="flex items-center space-x-2 px-4 py-2 hover:text-blue-600 transition-colors"
           >
             <i class="mdi mdi-book-open"></i>
             <span>Publications</span>
@@ -63,72 +68,123 @@
       </nav>
     </header>
 
-    <main class="container mx-auto px-4 py-8 mt-16 w-4xl">
-      <h1 class="text-4xl font-bold mb-8">藤井 敦寛</h1>
+    <main class="container mx-auto px-6 py-12 mt-20 max-w-4xl flex-1">
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <div class="text-center mb-8">
+          <h1 class="text-4xl font-bold mb-4 text-gray-900">藤井 敦寛</h1>
+          <div class="w-16 h-0.5 bg-blue-600 mx-auto"></div>
+        </div>
 
-      <p class="mb-4">
-        メールアドレスは公開しておりません．お手数ですがSNS経由でご連絡をお願い致します．<br />
-        （SNS経由でメールアドレスをお伝えすることは可能です．）
-      </p>
-      <a
-        class="twitter-mention-button"
-        href="https://twitter.com/intent/tweet?screen_name=_a2h1r0&ref_src=twsrc%5Etfw"
-        data-show-count="false"
-      >
-        Tweet to @_a2h1r0
-      </a>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"
-      ></script>
+        <div class="text-center mb-6">
+          <p class="text-gray-700 leading-relaxed mb-4">
+            メールアドレスは公開しておりません．お手数ですがSNS経由でご連絡をお願い致します．<br />
+            <span class="text-sm text-gray-500"
+              >（SNS経由でメールアドレスをお伝えすることは可能です．）</span
+            >
+          </p>
+          <a
+            class="inline-flex items-center px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+            href="https://twitter.com/intent/tweet?screen_name=_a2h1r0&ref_src=twsrc%5Etfw"
+          >
+            <i class="mdi mdi-twitter mr-2"></i>
+            Tweet to @_a2h1r0
+          </a>
+        </div>
+      </div>
 
-      <hr class="my-4 border-gray-700" />
+      <div class="bg-white rounded-lg shadow-sm p-8">
+        <section class="mb-8">
+          <h2
+            class="text-2xl font-semibold mb-4 text-gray-900 border-b border-gray-200 pb-2"
+          >
+            略歴
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            1998年生まれ．2022年，立命館大学大学院情報理工学研究科博士課程前期課程修了．修士（工学）．2022年より民間企業で勤務．
+          </p>
+        </section>
 
-      <h2 class="text-2xl font-semibold mb-2">略歴</h2>
-      <p class="mb-4">
-        1998年生まれ．2022年，立命館大学大学院情報理工学研究科博士課程前期課程修了．修士（工学）．2022年より民間企業で勤務．
-      </p>
+        <section>
+          <h2
+            class="text-2xl font-semibold mb-4 text-gray-900 border-b border-gray-200 pb-2"
+          >
+            学歴
+          </h2>
+          <div class="space-y-4">
+            <div class="pl-4 border-l-2 border-gray-200">
+              <div class="text-sm font-medium text-gray-500 mb-1">
+                Apr. 2013–Mar. 2016
+              </div>
+              <p class="text-gray-700">大阪明星学園 明星高等学校 卒業</p>
+            </div>
 
-      <hr class="my-4 border-gray-700" />
+            <div class="pl-4 border-l-2 border-gray-200">
+              <div class="text-sm font-medium text-gray-500 mb-1">
+                Apr. 2016–Mar. 2020
+              </div>
+              <p class="text-gray-700">
+                立命館大学情報理工学部情報システム学科 卒業<br />
+                <span class="text-sm text-gray-600"
+                  >指導教員：
+                  <a
+                    href="http://www.muraokazuya.net/"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >村尾和哉</a
+                  >
+                  教授</span
+                >
+              </p>
+            </div>
 
-      <h2 class="text-2xl font-semibold mb-2">学歴</h2>
-      <p class="mb-4">
-        Apr. 2013–Mar. 2016<br />
-        大阪明星学園 明星高等学校 卒業
-      </p>
-      <p class="mb-4">
-        Apr. 2016–Mar. 2020<br />
-        立命館大学情報理工学部情報システム学科 卒業（指導教員：
-        <a
-          href="http://www.muraokazuya.net/"
-          target="_blank"
-          class="text-blue-600 hover:underline"
-          >村尾和哉</a
-        >
-        教授）
-      </p>
-      <p class="mb-4">
-        Apr. 2020–Mar. 2022<br />
-        立命館大学大学院情報理工学研究科博士課程前期課程 修了（指導教員：
-        <a
-          href="http://www.muraokazuya.net/"
-          target="_blank"
-          class="text-blue-600 hover:underline"
-          >村尾和哉</a
-        >
-        教授）<br />
-        修士（工学）
-      </p>
+            <div class="pl-4 border-l-2 border-blue-600">
+              <div class="text-sm font-medium text-gray-500 mb-1">
+                Apr. 2020–Mar. 2022
+              </div>
+              <p class="text-gray-700">
+                立命館大学大学院情報理工学研究科博士課程前期課程 修了<br />
+                <span class="text-sm text-gray-600"
+                  >指導教員：
+                  <a
+                    href="http://www.muraokazuya.net/"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >村尾和哉</a
+                  >
+                  教授</span
+                ><br />
+                <span
+                  class="inline-block mt-1 px-2 py-1 bg-blue-100 text-blue-800 text-sm rounded"
+                  >修士（工学）</span
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <footer class="flex justify-center text-gray-400 text-sm">
-      Copyright © 2022–<span id="current-year"></span>&nbsp;Atsuhiro Fujii
+    <footer class="bg-white border-t border-gray-200 mt-12">
+      <div class="container mx-auto px-6 py-6">
+        <div class="text-center text-gray-600 text-sm">
+          Copyright © 2022–<span id="current-year"></span> Atsuhiro Fujii
+        </div>
+      </div>
     </footer>
   </body>
 
   <script>
     document.getElementById('current-year').textContent =
       new Date().getFullYear();
+
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
   </script>
 </html>
