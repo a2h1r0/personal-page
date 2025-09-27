@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://atsuhi.ro/sitemap.xml
+
+# Disallow common unnecessary files
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: *.json
+Disallow: *.css
+Disallow: *.js
+
+# Allow CSS and JS for proper rendering
+Allow: /style.css
+Allow: /global.css
