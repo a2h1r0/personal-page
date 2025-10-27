@@ -729,7 +729,7 @@
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 body {
-  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'メイリオ', sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-wrap: break-word;
 }
 @property --tw-space-y-reverse {
