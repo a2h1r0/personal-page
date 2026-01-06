@@ -1,3 +1,13 @@
+function openDownloadDatasetDialog() {
+  const dialog = document.getElementById('dataset-download-dialog');
+  dialog.showModal();
+}
+
+function closeDownloadDatasetDialog() {
+  const dialog = document.getElementById('dataset-download-dialog');
+  dialog.close();
+}
+
 function downloadFile(content, filename) {
   const url = URL.createObjectURL(content);
   const link = document.createElement('a');

@@ -157,17 +157,50 @@
             models.
           </p>
 
-          <a
-            href="javascript:void(0)"
-            onclick="downloadWaterLevelRecognitionZip();"
+          <button
+            type="button"
+            onclick="openDownloadDatasetDialog();"
             class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium"
           >
             <i class="mdi mdi-download mr-2"></i>
             Download dataset
-          </a>
+          </button>
         </section>
       </div>
     </main>
+
+    <dialog
+      id="dataset-download-dialog"
+      class="rounded-lg shadow-lg max-w-md w-full p-0 border border-slate-200 m-auto backdrop:bg-black/70"
+    >
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-slate-900 mb-3">
+          Download dataset
+        </h3>
+        <p class="text-sm text-slate-700 mb-4">
+          ここにデータセットの利用条件や簡単な説明などのダミーテキストが入ります。
+          This dialog can contain any additional information about how to use
+          this dataset.
+        </p>
+        <div class="flex justify-end space-x-3">
+          <button
+            type="button"
+            onclick="closeDownloadDatasetDialog();"
+            class="px-3 py-2 text-sm text-slate-700 hover:text-slate-900"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onclick="downloadWaterLevelRecognitionZip(); closeDownloadDatasetDialog();"
+            class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium"
+          >
+            <i class="mdi mdi-download mr-2"></i>
+            Download
+          </button>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="bg-white border-t border-slate-200 mt-12">
       <div class="container mx-auto px-6 py-6">
