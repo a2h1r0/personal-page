@@ -148,7 +148,7 @@
 
           <button
             type="button"
-            onclick="openDownloadDatasetDialog();"
+            onclick="openDownloadDialog();"
             class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium cursor-pointer"
           >
             <i class="mdi mdi-download mr-2"></i>
@@ -159,7 +159,7 @@
     </main>
 
     <dialog
-      id="dataset-download-dialog"
+      id="download-dialog"
       class="rounded-lg shadow-lg max-w-md w-full p-0 border border-slate-200 m-auto backdrop:bg-black/70"
     >
       <div class="p-6 space-y-4">
@@ -220,14 +220,14 @@
 
         <div class="space-y-3 mt-2">
           <label class="flex items-center text-sm text-slate-700">
-            <input id="dataset-terms-agree" type="checkbox" class="mr-2" />
+            <input id="terms-agree" type="checkbox" class="mr-2" />
             <span> 利用規約に同意する / I agree to the terms. </span>
           </label>
 
           <div class="flex justify-end space-x-3">
             <button
               type="button"
-              onclick="closeDownloadDatasetDialog();"
+              onclick="closeDownloadDialog();"
               class="px-3 py-2 text-sm text-slate-700 hover:text-slate-900 cursor-pointer"
             >
               Cancel
@@ -255,31 +255,31 @@
   </body>
 
   <script>
-    function openDownloadDatasetDialog() {
-      document.getElementById('dataset-terms-agree').checked = false;
-      document.getElementById('dataset-download-dialog').showModal();
+    function openDownloadDialog() {
+      document.getElementById('terms-agree').checked = false;
+      document.getElementById('download-dialog').showModal();
     }
 
-    function closeDownloadDatasetDialog() {
-      document.getElementById('dataset-download-dialog').close();
+    function closeDownloadDialog() {
+      document.getElementById('download-dialog').close();
     }
 
     function handleDatasetDownload() {
-      const checkbox = document.getElementById('dataset-terms-agree');
+      const checkbox = document.getElementById('terms-agree');
       if (!checkbox || !checkbox.checked) {
         alert(
           '利用規約に同意してください．\nPlease agree to the terms before downloading.'
         );
         return;
       }
-      downloadDatasetFile(
+      downloadFile(
         'dataset/water_level_recognition.zip',
         'water_level_recognition_dataset.zip'
       );
-      closeDownloadDatasetDialog();
+      closeDownloadDialog();
     }
 
-    function downloadDatasetFile(url, filename) {
+    function downloadFile(url, filename) {
       const link = document.createElement('a');
       link.href = url;
       link.download = filename;
