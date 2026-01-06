@@ -129,23 +129,15 @@
                 class="text-slate-600 font-bold hover:underline"
                 >Publicationsページ</a
               >をご覧ください<br />
-              <span class="text-slate-500"
-                >Paper: See the Publications page.</span
-              >
+              Paper: See the Publications page.
             </li>
             <li>
               内容：ボトルに水を注ぐ際の音を収録した音声データ<br />
-              <span class="text-slate-500"
-                >Content: Audio recordings of water being poured into
-                bottles.</span
-              >
+              Content: Audio recordings of water being poured into bottles.
             </li>
             <li>
               用途：水位推定モデルの学習および評価<br />
-              <span class="text-slate-500"
-                >Usage: Training and evaluating water level recognition
-                models.</span
-              >
+              Usage: Training and evaluating water level recognition models.
             </li>
           </ul>
           <p class="text-slate-700 leading-relaxed text-sm mb-3">
@@ -280,8 +272,20 @@
         );
         return;
       }
-      downloadWaterLevelRecognitionZip();
+      downloadDatasetFile(
+        'dataset/water_level_recognition.zip',
+        'water_level_recognition_dataset.zip'
+      );
       closeDownloadDatasetDialog();
+    }
+
+    function downloadDatasetFile(url, filename) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
 
     document.getElementById('current-year').textContent =
