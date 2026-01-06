@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dataset - Atsuhiro Fujii（藤井 敦寛）</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://atsuhi.ro/dataset.html" />
+    <meta name="description"
+    content="研究で使用したデータセットを公開するページです．現在は \"Water
+    Level Recognition by Analyzing the Sound when Pouring Water\"
+    で使用した音響データセットを配布しています．" />
+
+    <meta property="og:title" content="Dataset - Atsuhiro Fujii（藤井 敦寛）" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://atsuhi.ro/dataset.html" />
+    <meta
+      property="og:image"
+      content="https://atsuhi.ro/images/thumbnail.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Research datasets by Atsuhiro Fujii"
+    />
+    <meta property="og:description"
+    content="研究で使用したデータセットを公開するページです．現在は \"Water
+    Level Recognition by Analyzing the Sound when Pouring Water\"
+    で使用した音響データセットを配布しています．" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="Atsuhiro Fujii" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Atsuhiro Fujii" />
+    <meta name="language" content="ja" />
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <meta name="theme-color" content="#84adbf" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V5MCKWYYMF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-V5MCKWYYMF');
+    </script>
+  </head>
+
+  <body class="bg-slate-100 text-slate-900 min-h-screen flex flex-col">
+    <header
+      class="fixed top-0 left-0 right-0 bg-white border-b border-slate-200 shadow-sm z-10"
+    >
+      <nav class="container mx-auto">
+        <div class="flex justify-center md:space-x-8 py-4">
+          <a
+            href="/"
+            class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+          >
+            <i class="mdi mdi-home"></i>
+            <span>Top</span>
+          </a>
+          <a
+            href="projects.html"
+            class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+          >
+            <i class="mdi mdi-hammer-wrench"></i>
+            <span>Projects</span>
+          </a>
+          <a
+            href="publications.html"
+            class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+          >
+            <i class="mdi mdi-school"></i>
+            <span>Publications</span>
+          </a>
+          <a
+            href="dataset.html"
+            class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+          >
+            <i class="mdi mdi-database"></i>
+            <span>Dataset</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 mt-20 max-w-4xl flex-1">
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <section class="mb-6">
+          <h1
+            class="text-2xl font-semibold mb-4 text-slate-900 border-b border-slate-200 pb-2"
+          >
+            Dataset
+          </h1>
+          <p class="text-slate-700 leading-relaxed">
+            本ページでは，著者が研究で使用したデータセットを公開しています．今後，論文やプロジェクトで用いたデータセットを順次追加していく予定です．
+          </p>
+        </section>
+
+        <section class="mb-4 border border-slate-200 rounded-md p-4">
+          <h2
+            class="text-xl font-semibold mb-3 text-slate-900 border-b border-slate-200 pb-2"
+          >
+            Water Level Recognition by Analyzing the Sound when Pouring Water
+          </h2>
+          <p class="text-slate-700 leading-relaxed text-xs mb-3">
+            <a
+              href="publications.html#water-level-recognition"
+              class="text-slate-600 hover:underline"
+              >論文情報（HASCA 2024）</a
+            >
+          </p>
+
+          <h3 class="text-base font-semibold mb-2 text-slate-900">
+            データセット概要
+          </h3>
+          <ul class="list-disc pl-5 text-slate-700 text-xs space-y-1 mb-3">
+            <li>内容：コップに水を注ぐ際の音を収録した音声データ</li>
+            <li>用途：水位認識モデルの学習および評価</li>
+            <li>形式：圧縮ファイル（例：ZIP形式）</li>
+            <li>備考：実験条件や前処理の詳細は上記論文をご参照ください．</li>
+          </ul>
+
+          <a
+            href="#dummy-dataset-link"
+            class="inline-flex items-center px-5 py-3 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium"
+          >
+            <i class="mdi mdi-download mr-2"></i>
+            Download dataset (dummy link)
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12">
+      <div class="container mx-auto px-6 py-6">
+        <div class="text-center text-slate-600 text-sm">
+          Copyright © 2022–<span id="current-year"></span> Atsuhiro Fujii
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    document.getElementById('current-year').textContent =
+      new Date().getFullYear();
+  </script>
+</html>
