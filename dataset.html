@@ -160,7 +160,7 @@
           <button
             type="button"
             onclick="openDownloadDatasetDialog();"
-            class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium"
+            class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium cursor-pointer"
           >
             <i class="mdi mdi-download mr-2"></i>
             Download dataset
@@ -239,14 +239,14 @@
             <button
               type="button"
               onclick="closeDownloadDatasetDialog();"
-              class="px-3 py-2 text-sm text-slate-700 hover:text-slate-900"
+              class="px-3 py-2 text-sm text-slate-700 hover:text-slate-900 cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="button"
               onclick="handleDatasetDownload();"
-              class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium"
+              class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium cursor-pointer"
             >
               <i class="mdi mdi-download mr-2"></i>
               Download
@@ -279,7 +279,7 @@
       const checkbox = document.getElementById('dataset-terms-agree');
       if (!checkbox || !checkbox.checked) {
         alert(
-          '利用規約を確認し，同意してください．\nPlease read and agree to the terms before downloading.'
+          '利用規約に同意してください．\nPlease agree to the terms before downloading.'
         );
         return;
       }

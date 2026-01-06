@@ -339,6 +339,9 @@
   .flex-1 {
     flex: 1;
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .scroll-mt-20 {
     scroll-margin-top: calc(var(--spacing) * 20);
   }
