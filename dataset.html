@@ -173,31 +173,85 @@
       id="dataset-download-dialog"
       class="rounded-lg shadow-lg max-w-md w-full p-0 border border-slate-200 m-auto backdrop:bg-black/70"
     >
-      <div class="p-6">
-        <h3 class="text-lg font-semibold text-slate-900 mb-3">
-          Download dataset
-        </h3>
-        <p class="text-sm text-slate-700 mb-4">
-          ここにデータセットの利用条件や簡単な説明などのダミーテキストが入ります。
-          This dialog can contain any additional information about how to use
-          this dataset.
-        </p>
-        <div class="flex justify-end space-x-3">
-          <button
-            type="button"
-            onclick="closeDownloadDatasetDialog();"
-            class="px-3 py-2 text-sm text-slate-700 hover:text-slate-900"
+      <div class="p-6 space-y-4">
+        <h3 class="text-lg font-semibold text-slate-900">Download dataset</h3>
+
+        <section>
+          <h4 class="text-md font-semibold text-slate-900 mb-1">利用規約</h4>
+          <div
+            class="border border-slate-200 rounded-md p-3 text-sm text-slate-700 max-h-40 overflow-y-auto space-y-2"
           >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onclick="downloadWaterLevelRecognitionZip(); closeDownloadDatasetDialog();"
-            class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium"
+            <p>
+              本データセットは，研究・教育などの非営利目的での利用を想定して提供されるものです．
+            </p>
+            <p>
+              本データセットの内容，正確性，有用性，特定目的への適合性について，提供者は一切の保証を行いません．
+              本データセットの利用により生じたいかなる損害・不利益についても，提供者は一切の責任を負いません．
+            </p>
+            <p>
+              利用者は，本データセットを第三者に再配布，転売，あるいはこれらと同等とみなされる行為を行ってはなりません．
+              学術論文やプレゼンテーション等において本データセットを利用した成果を公開する場合は，元論文の引用を含め，適切なクレジットを表示してください．
+            </p>
+            <p>
+              利用者が本データセットを利用した結果については，利用者自身の責任において管理および判断するものとします．
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h4 class="text-md font-semibold text-slate-900 mb-1">
+            Terms of Use
+          </h4>
+          <div
+            class="border border-slate-200 rounded-md p-3 text-sm text-slate-700 max-h-40 overflow-y-auto space-y-2"
           >
-            <i class="mdi mdi-download mr-2"></i>
-            Download
-          </button>
+            <p>
+              This dataset is provided primarily for non-commercial purposes
+              such as academic research and education.
+            </p>
+            <p>
+              The provider makes no warranties whatsoever regarding the
+              completeness, accuracy, usefulness, or fitness for a particular
+              purpose of this dataset. The provider shall not be liable for any
+              loss or damage arising from the use of this dataset.
+            </p>
+            <p>
+              You must not redistribute, resell, or otherwise provide this
+              dataset to third parties in a manner equivalent to redistribution
+              or resale. When publishing results obtained using this dataset,
+              please give appropriate credit, including citation of the original
+              paper.
+            </p>
+            <p>
+              You are solely responsible for any results, decisions, or
+              consequences arising from your use of this dataset.
+            </p>
+          </div>
+        </section>
+
+        <div class="space-y-3 mt-2">
+          <label class="flex items-center text-sm text-slate-700">
+            <input id="dataset-terms-agree" type="checkbox" class="mr-2" />
+            <span> 利用規約に同意する / I agree to the terms. </span>
+          </label>
+
+          <div class="flex justify-end space-x-3">
+            <button
+              type="button"
+              onclick="closeDownloadDatasetDialog();"
+              class="px-3 py-2 text-sm text-slate-700 hover:text-slate-900"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onclick="handleDatasetDownload();"
+              class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium"
+            >
+              <i class="mdi mdi-download mr-2"></i>
+              Download
+            </button>
+          </div>
         </div>
       </div>
     </dialog>
@@ -212,6 +266,27 @@
   </body>
 
   <script>
+    function openDownloadDatasetDialog() {
+      document.getElementById('dataset-terms-agree').checked = false;
+      document.getElementById('dataset-download-dialog').showModal();
+    }
+
+    function closeDownloadDatasetDialog() {
+      document.getElementById('dataset-download-dialog').close();
+    }
+
+    function handleDatasetDownload() {
+      const checkbox = document.getElementById('dataset-terms-agree');
+      if (!checkbox || !checkbox.checked) {
+        alert(
+          '利用規約を確認し，同意してください．\nPlease read and agree to the terms before downloading.'
+        );
+        return;
+      }
+      downloadWaterLevelRecognitionZip();
+      closeDownloadDatasetDialog();
+    }
+
     document.getElementById('current-year').textContent =
       new Date().getFullYear();
   </script>
