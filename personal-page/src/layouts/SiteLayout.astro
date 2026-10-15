@@ -1,0 +1,22 @@
+---
+import PageHead, { type Props as PageHeadProps } from '../components/PageHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+type Props = PageHeadProps;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <PageHead {...Astro.props} />
+    <slot name="head" />
+  </head>
+
+  <body class="bg-slate-100 text-slate-900 min-h-screen flex flex-col">
+    <SiteHeader />
+    <slot />
+    <SiteFooter />
+    <slot name="scripts" />
+  </body>
+</html>
