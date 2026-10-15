@@ -1,0 +1,61 @@
+---
+import GoogleAnalytics from './GoogleAnalytics.astro';
+
+export interface Props {
+  title: string;
+  canonicalUrl: string;
+  description: string;
+  imageAlt: string;
+}
+
+const { title, canonicalUrl, description, imageAlt } = Astro.props;
+---
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta
+      name="description"
+      content={description}
+    />
+
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta
+      property="og:image"
+      content="https://atsuhi.ro/images/thumbnail.png"
+    />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="Atsuhiro Fujii" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Atsuhiro Fujii" />
+    <meta name="language" content="ja" />
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <meta name="theme-color" content="#84adbf" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <GoogleAnalytics />

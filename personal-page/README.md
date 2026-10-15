@@ -1,11 +1,20 @@
 # personal-page
 
-既存の静的HTMLをAstroで動かすためのプロジェクトです。
-主要4ページは`src/pages/`へ移動して`.astro`に変更し、CSS・画像などは`public/`へ移動しています。
-本文や既存スクリプトは変更せず、Astroによる処理を避けるための`is:inline`指定だけ加えています。
-独立したゲームは`src/pages/apps/baby-programming/index.html`として維持しています。
+Atsuhiro Fujii（藤井 敦寛）の個人サイトです。プロフィール、開発プロジェクト、研究業績、研究で使用したデータセットを掲載しています。Astroで静的サイトを生成しています。
 
-## 動作確認
+公開サイト：<https://atsuhi.ro/>
+
+## ページ
+
+| ページ | 内容 | URL |
+| --- | --- | --- |
+| Top | プロフィール、スキル、個人開発、学歴 | <https://atsuhi.ro/> |
+| Projects | 職歴と開発プロジェクト | <https://atsuhi.ro/projects.html> |
+| Publications | 論文、発表、受賞などの研究業績 | <https://atsuhi.ro/publications.html> |
+| Dataset | 研究で使用したデータセット | <https://atsuhi.ro/dataset.html> |
+| はちさんと おはな | 4〜6歳向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/> |
+
+## 開発
 
 このディレクトリで実行します。Node.js 22.12.0以上とpnpmが必要です。
 
@@ -14,13 +23,31 @@ pnpm install --frozen-lockfile
 pnpm dev --background
 ```
 
-`http://localhost:4321/`、`/projects.html`、`/publications.html`、`/dataset.html`、`/apps/baby-programming/`で確認できます。
-開発サーバーは`pnpm astro dev stop`で停止します。
+開発サーバーはバックグラウンドで起動します。`http://localhost:4321/`でサイトを確認できます。
+
+```sh
+pnpm astro dev status
+pnpm astro dev logs
+pnpm astro dev stop
+```
+
+## ビルドとプレビュー
 
 ```sh
 pnpm build
 pnpm preview
 ```
 
-ビルド結果は`dist/`に出力され、既存と同じ`.html`のURLを使います。
-コンポーネント化、ルートディレクトリへの展開、公開設定の切り替えは後続で行います。
+ビルド結果は`dist/`に出力されます。`pnpm preview`で生成したサイトをローカルで確認できます。
+
+## 構成
+
+```text
+src/
+  components/  ヘッダー、フッター、metaタグなどの共通部品
+  layouts/     ページ共通のレイアウト
+  pages/       各ページとプログラミング体験ゲーム
+public/        CSS、画像、favicon、サイトマップなどの静的ファイル
+```
+
+ページ固有の掲載内容は`src/pages/`、共通部分は`src/components/`と`src/layouts/`で管理します。
