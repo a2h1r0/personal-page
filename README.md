@@ -40,6 +40,18 @@ pnpm preview
 
 ビルド結果は`dist/`に出力されます。`pnpm preview`で生成したサイトをローカルで確認できます。
 
+## 公開
+
+GitHub Pagesで`https://atsuhi.ro/`に公開します。
+`master`へのpush時に[Deploy to GitHub Pages](https://github.com/a2h1r0/personal-page/actions/workflows/deploy.yml)がAstroをビルドし、`dist/`を公開します。プルリクエストではビルドのみ確認します。
+
+リポジトリの[Settings → Pages](https://github.com/a2h1r0/personal-page/settings/pages)で、公開元のSourceを**GitHub Actions**、Custom domainを**atsuhi.ro**に設定します。Jekyllによるブランチ直接公開は使用しません。
+独自ドメインはPages側にも設定が必要です。`public/CNAME`だけでは、カスタムワークフローの公開ドメインは設定されません。
+
+手動で再公開する場合は、Actionsの**Deploy to GitHub Pages → Run workflow**から`master`を選択します。完了後、公開サイトの各ページとデータセット・ゲームへのリンクを確認します。
+
+詳細は[AstroのGitHub Pages公開ガイド](https://docs.astro.build/en/guides/deploy/github/)と[GitHubの独自ドメイン設定](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)を参照してください。
+
 ## 構成
 
 ```text
