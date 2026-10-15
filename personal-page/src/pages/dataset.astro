@@ -50,7 +50,7 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-V5MCKWYYMF"
     ></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -258,7 +258,7 @@
     </footer>
   </body>
 
-  <script>
+  <script is:inline>
     function openDownloadDialog() {
       document.getElementById('terms-agree').checked = false;
       document.getElementById('download-dialog').showModal();
