@@ -53,7 +53,7 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-V5MCKWYYMF"
     ></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -628,7 +628,7 @@
     </footer>
   </body>
 
-  <script>
+  <script is:inline>
     document.getElementById('current-year').textContent =
       new Date().getFullYear();
   </script>
