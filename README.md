@@ -16,7 +16,7 @@ Atsuhiro Fujii（藤井 敦寛）の個人サイトです。プロフィール�
 
 ## 開発
 
-このディレクトリで実行します。Node.js 22.12.0以上とpnpmが必要です。
+リポジトリのルートディレクトリで実行します。Node.js 22.12.0以上とpnpmが必要です。
 
 ```sh
 pnpm install --frozen-lockfile
