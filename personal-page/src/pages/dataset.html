@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dataset - Atsuhiro Fujii（藤井 敦寛）</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://atsuhi.ro/dataset.html" />
+    <meta
+      name="description"
+      content="研究で使用したデータセットを公開するページです．"
+    />
+
+    <meta property="og:title" content="Dataset - Atsuhiro Fujii（藤井 敦寛）" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://atsuhi.ro/dataset.html" />
+    <meta
+      property="og:image"
+      content="https://atsuhi.ro/images/thumbnail.png"
+    />
+    <meta property="og:image:alt" content="Research datasets" />
+    <meta
+      property="og:description"
+      content="研究で使用したデータセットを公開するページです．"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="Atsuhiro Fujii" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Atsuhiro Fujii" />
+    <meta name="language" content="ja" />
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <meta name="theme-color" content="#84adbf" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V5MCKWYYMF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-V5MCKWYYMF');
+    </script>
+  </head>
+
+  <body class="bg-slate-100 text-slate-900 min-h-screen flex flex-col">
+    <header
+      class="fixed top-0 left-0 right-0 bg-white border-b border-slate-200 shadow-sm z-10"
+    >
+      <div class="overflow-x-auto">
+        <nav class="container mx-auto">
+          <div
+            class="flex space-x-4 md:justify-center md:space-x-8 py-4 whitespace-nowrap"
+          >
+            <a
+              href="/"
+              class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+            >
+              <i class="mdi mdi-home"></i>
+              <span>Top</span>
+            </a>
+            <a
+              href="projects.html"
+              class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+            >
+              <i class="mdi mdi-hammer-wrench"></i>
+              <span>Projects</span>
+            </a>
+            <a
+              href="publications.html"
+              class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+            >
+              <i class="mdi mdi-school"></i>
+              <span>Publications</span>
+            </a>
+            <a
+              href="dataset.html"
+              class="flex items-center space-x-2 px-4 py-2 hover:text-slate-600 transition-colors"
+            >
+              <i class="mdi mdi-database"></i>
+              <span>Dataset</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 mt-20 max-w-4xl flex-1">
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <section class="mb-6">
+          <h1
+            class="text-2xl font-semibold mb-4 text-slate-900 border-b border-slate-200 pb-2"
+          >
+            Dataset
+          </h1>
+          <p class="text-slate-700 leading-relaxed">
+            本ページでは，著者が研究で使用したデータセットを公開しています．今後，論文やプロジェクトで用いたデータセットを順次追加していく予定です．
+          </p>
+          <p class="text-slate-700 leading-relaxed mt-1">
+            This page provides datasets used in my research. Additional datasets
+            from future publications and projects will be added here.
+          </p>
+        </section>
+
+        <section class="mb-4 border border-slate-200 rounded-md p-4">
+          <h2
+            class="text-xl font-semibold mb-3 text-slate-900 border-b border-slate-200 pb-2"
+          >
+            Water Level Recognition by Analyzing the Sound when Pouring Water
+          </h2>
+          <ul class="list-disc pl-5 text-slate-700 text-sm space-y-1 mb-3">
+            <li>
+              論文情報：<a
+                href="publications.html#water-level-recognition"
+                class="text-slate-600 font-bold hover:underline"
+                >Publicationsページ</a
+              >をご覧ください<br />
+              Paper: See the Publications page.
+            </li>
+            <li>
+              内容：ボトルに水を注ぐ際の音を収録した音声データ<br />
+              Content: Audio recordings of water being poured into bottles.
+            </li>
+            <li>
+              用途：水位推定モデルの学習および評価<br />
+              Usage: Training and evaluating water level recognition models.
+            </li>
+          </ul>
+          <p class="text-slate-700 leading-relaxed text-sm mb-3">
+            This dataset contains audio recordings of water being poured into
+            bottles, used for training and evaluating water level recognition
+            models.
+          </p>
+
+          <button
+            type="button"
+            onclick="openDownloadDialog();"
+            class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium cursor-pointer"
+          >
+            <i class="mdi mdi-download mr-2"></i>
+            Download dataset
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <dialog
+      id="download-dialog"
+      class="rounded-lg shadow-lg max-w-md p-0 border border-slate-200 mx-4 sm:mx-auto my-auto backdrop:bg-black/70"
+    >
+      <div class="p-6 space-y-4">
+        <h3 class="text-lg font-semibold text-slate-900">Download dataset</h3>
+
+        <section>
+          <h4 class="text-md font-semibold text-slate-900 mb-1">利用規約</h4>
+          <div
+            class="border border-slate-200 rounded-md p-3 text-sm text-slate-700 max-h-40 overflow-y-auto space-y-2"
+          >
+            <p>
+              本データセットは，研究・教育などの非営利目的での利用を想定して提供されるものです．
+            </p>
+            <p>
+              本データセットの内容，正確性，有用性，特定目的への適合性について，提供者は一切の保証を行いません．
+              本データセットの利用により生じたいかなる損害・不利益についても，提供者は一切の責任を負いません．
+            </p>
+            <p>
+              利用者は，本データセットを第三者に再配布，転売，あるいはこれらと同等とみなされる行為を行ってはなりません．
+              学術論文やプレゼンテーション等において本データセットを利用した成果を公開する場合は，元論文の引用を含め，適切なクレジットを表示してください．
+            </p>
+            <p>
+              利用者が本データセットを利用した結果については，利用者自身の責任において管理および判断するものとします．
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h4 class="text-md font-semibold text-slate-900 mb-1">
+            Terms of Use
+          </h4>
+          <div
+            class="border border-slate-200 rounded-md p-3 text-sm text-slate-700 max-h-40 overflow-y-auto space-y-2"
+          >
+            <p>
+              This dataset is provided primarily for non-commercial purposes
+              such as academic research and education.
+            </p>
+            <p>
+              The provider makes no warranties whatsoever regarding the
+              completeness, accuracy, usefulness, or fitness for a particular
+              purpose of this dataset. The provider shall not be liable for any
+              loss or damage arising from the use of this dataset.
+            </p>
+            <p>
+              You must not redistribute, resell, or otherwise provide this
+              dataset to third parties in a manner equivalent to redistribution
+              or resale. When publishing results obtained using this dataset,
+              please give appropriate credit, including citation of the original
+              paper.
+            </p>
+            <p>
+              You are solely responsible for any results, decisions, or
+              consequences arising from your use of this dataset.
+            </p>
+          </div>
+        </section>
+
+        <div class="space-y-3 mt-2">
+          <label class="flex items-center text-sm text-slate-700">
+            <input id="terms-agree" type="checkbox" class="mr-2" />
+            <span> 利用規約に同意する / I agree to the terms. </span>
+          </label>
+
+          <div class="flex justify-end space-x-3">
+            <button
+              type="button"
+              onclick="closeDownloadDialog();"
+              class="px-3 py-2 text-sm text-slate-700 hover:text-slate-900 cursor-pointer"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onclick="handleDatasetDownload();"
+              class="inline-flex items-center px-3 py-2 bg-slate-800 text-white rounded-md shadow hover:bg-slate-700 transition-colors text-sm font-medium cursor-pointer"
+            >
+              <i class="mdi mdi-download mr-2"></i>
+              Download
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="bg-white border-t border-slate-200 mt-12">
+      <div class="container mx-auto px-6 py-6">
+        <div class="text-center text-slate-600 text-sm">
+          Copyright © 2022–<span id="current-year"></span> Atsuhiro Fujii
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    function openDownloadDialog() {
+      document.getElementById('terms-agree').checked = false;
+      document.getElementById('download-dialog').showModal();
+    }
+
+    function closeDownloadDialog() {
+      document.getElementById('download-dialog').close();
+    }
+
+    function handleDatasetDownload() {
+      const checkbox = document.getElementById('terms-agree');
+      if (!checkbox || !checkbox.checked) {
+        alert(
+          '利用規約に同意してください．\nPlease agree to the terms before downloading.'
+        );
+        return;
+      }
+      downloadFile(
+        'dataset/water_level_recognition.zip',
+        'water_level_recognition_dataset.zip'
+      );
+      closeDownloadDialog();
+    }
+
+    function downloadFile(url, filename) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    document.getElementById('current-year').textContent =
+      new Date().getFullYear();
+  </script>
+</html>
