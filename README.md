@@ -12,7 +12,7 @@ Atsuhiro Fujii（藤井 敦寛）の個人サイトです。プロフィール�
 | Projects | 職歴と開発プロジェクト | <https://atsuhi.ro/projects.html> |
 | Publications | 論文、発表、受賞などの研究業績 | <https://atsuhi.ro/publications.html> |
 | Dataset | 研究で使用したデータセット | <https://atsuhi.ro/dataset.html> |
-| はちさんと おはな | 4〜6歳向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/> |
+| はちさんと おはな | 4〜6歳向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/bee-and-flower/> |
 
 ## 開発
 
@@ -63,3 +63,5 @@ public/        CSS、画像、favicon、サイトマップなどの静的ファ�
 ```
 
 ページ固有の掲載内容は`src/pages/`、共通部分は`src/components/`と`src/layouts/`で管理します。
+
+プログラミング体験アプリは`src/pages/apps/baby-programming/<アプリ名>/index.html`に配置します。「はちさんと おはな」は`bee-and-flower/`で管理し、他のアプリも同じ階層に追加できます。
