@@ -65,4 +65,3 @@ public/        CSS、画像、favicon、サイトマップなどの静的ファ�
 ページ固有の掲載内容は`src/pages/`、共通部分は`src/components/`と`src/layouts/`で管理します。
 
 プログラミング体験アプリは`src/pages/apps/baby-programming/<アプリ名>/index.html`に配置します。「はちさんと おはな」は`bee-and-flower/`で管理し、他のアプリも同じ階層に追加できます。
-旧URLの`/apps/baby-programming/`（`index.html`を含む）は、HTMLのmeta refreshで`/apps/baby-programming/bee-and-flower/`へ自動転送します。
