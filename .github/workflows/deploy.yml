@@ -15,10 +15,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Read the game revision selected for publication
+        id: game
+        shell: bash
+        run: |
+          revision="$(jq -er '.revision | strings | select(test("^[0-9a-f]{40}$"))' apps/baby-programming/bee-and-flower.json)"
+          printf 'revision=%s\n' "$revision" >> "$GITHUB_OUTPUT"
+      - name: Check out the game only for this build
+        uses: actions/checkout@v7
+        with:
+          repository: a2h1r0/baby-programming
+          ref: ${{ steps.game.outputs.revision }}
+          path: .external/bee-and-flower
+          persist-credentials: false
       - name: Install, build, and upload Astro site
         uses: withastro/action@v6
         with:
           node-version: 24
+          build-cmd: |
+            (cd .external/bee-and-flower && node --test)
+            pnpm build:publish
 
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'

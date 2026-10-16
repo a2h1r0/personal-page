@@ -1,5 +1,7 @@
 # build output
 dist/
+# external app checkouts used only while building the published site
+.external/
 # generated types
 .astro/
 

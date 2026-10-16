@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:publish": "astro build && node .external/bee-and-flower/scripts/build-publication.cjs dist/apps/baby-programming/bee-and-flower",
     "preview": "astro preview",
     "astro": "astro"
   },
