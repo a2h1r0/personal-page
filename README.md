@@ -12,7 +12,13 @@ Atsuhiro Fujii（藤井 敦寛）の個人サイトです。プロフィール�
 | Projects | 職歴と開発プロジェクト | <https://atsuhi.ro/projects.html> |
 | Publications | 論文、発表、受賞などの研究業績 | <https://atsuhi.ro/publications.html> |
 | Dataset | 研究で使用したデータセット | <https://atsuhi.ro/dataset.html> |
+| Apps | アプリケーション一覧と紹介 | <https://atsuhi.ro/apps/> |
 | はちさんと おはな | 4〜6歳向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/> |
+
+## アプリ一覧の管理
+
+アプリ一覧は`src/pages/apps/index.astro`で管理します。はちさんとおはなの紹介画像は、[アプリのリポジトリ](https://github.com/a2h1r0/baby-programming)の`docs/success-1024x680.jpg`を`public/apps/baby-programming/bee-and-flower/ogp.jpg`へコピーしたものです。
+現在のアプリHTMLには`og:image`がないため、紹介画像のパスを一覧側で指定しています。アプリ側の公開処理はHTMLのみを同期するため、紹介画像を更新する場合は同じパスへ再コピーします。
 
 ## 開発
 
