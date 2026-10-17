@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import CookBotLinks from '../components/CookBotLinks.astro';
 ---
 
 <SiteLayout
@@ -414,41 +415,14 @@ import SiteLayout from '../layouts/SiteLayout.astro';
                   </p>
                 </div>
 
-                <div class="space-y-3">
-                  <div class="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href="https://cookbot.jp/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      <i class="mdi mdi-web mr-2"></i>
-                      Web
-                    </a>
-                    <a
-                      href="https://apps.apple.com/app/cookbot/id6747275041"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex items-center px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
-                    >
-                      <i class="mdi mdi-apple mr-2"></i>
-                      App Store
-                    </a>
-                    <a
-                      href="https://play.google.com/store/apps/details?id=jp.cookbot"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                    >
-                      <i class="mdi mdi-google-play mr-2"></i>
-                      Google Play
-                    </a>
-                  </div>
-                </div>
+                <CookBotLinks />
               </div>
             </div>
           </div>
           <div class="mt-4">
+            <p class="text-slate-600 leading-relaxed mb-3">
+              このほかにもアプリケーションを公開しています。ご興味があれば一覧をご覧ください。
+            </p>
             <a
               href="/apps/"
               aria-label="アプリケーション一覧を見る"
