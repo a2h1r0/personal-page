@@ -31,7 +31,7 @@ const apps = [
   description="Atsuhiro Fujii（藤井 敦寛）のアプリケーション一覧。CookBot、はちさんとおはなを掲載しています。"
   imageAlt="Applications by Atsuhiro Fujii"
 >
-  <main class="container mx-auto px-6 py-12 mt-20 max-w-4xl flex-1">
+  <main class="apps-container mx-auto px-6 py-12 mt-20 flex-1">
     <div class="apps-heading">
       <h1>アプリケーション / Apps</h1>
     </div>
@@ -61,6 +61,7 @@ const apps = [
 </SiteLayout>
 
 <style>
+  .apps-container { width: 100%; max-width: 64rem; }
   .apps-heading { margin-bottom: 2rem; }
   .apps-heading h1 { margin: 0 0 .75rem; font-size: clamp(1.4rem, 4vw, 1.875rem); font-weight: 700; }
   .apps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
@@ -76,6 +77,6 @@ const apps = [
   .app-card-action::after { content: ''; position: absolute; inset: 0; border-radius: 1rem; }
   .app-card-action:focus-visible { outline: none; }
   .app-card-action:focus-visible::after { outline: 3px solid #2563eb; outline-offset: -3px; }
-  @media (max-width: 640px) { .apps-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 959px) { .apps-grid { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { .app-card { transition: none; } }
 </style>

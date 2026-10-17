@@ -420,17 +420,21 @@ import CookBotLinks from '../components/CookBotLinks.astro';
             </div>
           </div>
           <div class="mt-4">
-            <p class="text-slate-600 leading-relaxed mb-3">
-              このほかにもアプリケーションを公開しています。ご興味があれば一覧をご覧ください。
+            <p class="text-slate-700 leading-relaxed mb-3">
+              このほかのアプリケーションについては、以下のページをご覧ください：
             </p>
-            <a
-              href="/apps/"
-              aria-label="アプリケーション一覧を見る"
-              class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              <i class="mdi mdi-apps mr-2" aria-hidden="true"></i>
-              一覧を見る
-            </a>
+            <ul class="space-y-2">
+              <li class="flex items-center text-slate-700">
+                <i class="mdi mdi-apps mr-2 text-slate-600" aria-hidden="true"></i>
+                <a
+                  href="/apps/"
+                  class="text-slate-600 hover:underline"
+                >
+                  Appsページ
+                </a>
+                <span class="text-slate-500 ml-2">- アプリケーション</span>
+              </li>
+            </ul>
           </div>
         </section>
 
