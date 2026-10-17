@@ -29,12 +29,11 @@ const { imageSrc } = Astro.props;
     </div>
     <a class="play-button" href="/apps/baby-programming/bee-and-flower/" target="_blank" rel="noopener noreferrer">
       ゲームであそぶ <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
-      <span class="play-note">新しいタブで開きます</span>
     </a>
     <section class="offline-details" aria-labelledby="offline-title">
       <h3 id="offline-title">オフラインでも遊べます</h3>
       <p>GitHubから<code>index.html</code>を保存し、保存したファイルをブラウザーで開くと、インターネット接続がなくても遊べます。</p>
-      <a class="github-link" href="https://github.com/a2h1r0/baby-programming/tree/main/bee-and-flower" target="_blank" rel="noopener noreferrer" aria-label="GitHubでHTMLと使い方を見る（新しいタブで開きます）">
+      <a class="github-link" href="https://github.com/a2h1r0/baby-programming/tree/main/bee-and-flower" target="_blank" rel="noopener noreferrer">
         <i class="mdi mdi-github" aria-hidden="true"></i>
         GitHubでHTMLと使い方を見る
         <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
@@ -75,7 +74,6 @@ const { imageSrc } = Astro.props;
   .level-details p { margin: 0; font-size: .9rem; color: #475569; }
   .play-button { display: block; padding: .9rem 1.25rem; border-radius: .75rem; background: #356b4b; color: white; text-align: center; font-weight: 700; }
   .play-button:hover { background: #28573b; }
-  .play-note { display: block; margin-top: .2rem; font-size: .75rem; font-weight: 400; }
   .offline-details { margin-top: 1.5rem; padding: 1rem; border-radius: .75rem; background: #f8fafc; }
   .offline-details h3 { margin: 0; font-weight: 700; }
   .offline-details p { margin: .5rem 0 .75rem; font-size: .9rem; color: #475569; }

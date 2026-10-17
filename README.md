@@ -13,11 +13,11 @@ Atsuhiro Fujii（藤井 敦寛）の個人サイトです。プロフィール�
 | Publications | 論文、発表、受賞などの研究業績 | <https://atsuhi.ro/publications.html> |
 | Dataset | 研究で使用したデータセット | <https://atsuhi.ro/dataset.html> |
 | Apps | アプリケーション一覧と紹介 | <https://atsuhi.ro/apps/> |
-| はちさんと おはな | 4〜6歳向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/bee-and-flower/> |
+| はちさんと おはな | 幼児向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/bee-and-flower/> |
 
-## アプリ一覧の管理
+## アプリケーション一覧の管理
 
-アプリ一覧は`src/pages/apps/index.astro`、はちさんとおはなの紹介ダイアログは`src/components/BabyProgrammingDialog.astro`で管理します。
+アプリケーション一覧は`src/pages/apps/index.astro`、はちさんとおはなの紹介ダイアログは`src/components/BabyProgrammingDialog.astro`で管理します。トップページは「アプリケーション」セクションにCookBotの紹介と一覧へのリンクをまとめています。
 
 紹介画像は各アプリの公開済みOGP画像をURLで参照します。CookBotはトップページと一覧で`https://cookbot.jp/images/thumbnail.jpg`、はちさんとおはなは一覧とダイアログで`https://atsuhi.ro/apps/baby-programming/bee-and-flower/image.png`を使用します。画像のコピーは保存せず、公開先の画像を更新すると紹介にも反映されます。画像のURLを変更した場合は、各ページの参照先を更新してください。
 
