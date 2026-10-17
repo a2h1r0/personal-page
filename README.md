@@ -51,13 +51,7 @@ GitHub Pagesで`https://atsuhi.ro/`に公開します。
 
 本番の公開処理は直列に実行し、公開直前に両リポジトリの最新コミットを確認します。新しい更新がある古い実行は公開をスキップします。
 
-通常の`pnpm dev`と`pnpm build`は個人サイトのみを対象にします。ゲームを含む公開成果物をローカルで確認する場合は、次のようにゲームを取得します。`.external/`と`dist/`はGit管理対象外です。
-
-```sh
-git clone --branch main https://github.com/a2h1r0/baby-programming.git .external/bee-and-flower
-pnpm build:publish
-pnpm preview
-```
+通常の`pnpm dev`と`pnpm build`は個人サイトのみを対象にします。ゲームの取得とコピーはGitHub Actions内で実行し、成果物のアップロード前に組み込みます。ゲームを含む公開成果物は、Actionsのビルドで生成されるGitHub PagesのArtifactから確認できます。`.external/`と`dist/`はGit管理対象外です。
 
 GitHub Appの認証情報はゲーム側に設定します。Repository permissionsの **Actions: Read and write** を持つAppをこのリポジトリだけにインストールし、ゲーム側のVariable `SITE_DEPLOY_APP_CLIENT_ID`とSecret `SITE_DEPLOY_APP_PRIVATE_KEY`にClient IDと秘密鍵を登録します。トークンは実行時に自動発行します。
 

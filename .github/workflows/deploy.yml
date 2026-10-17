@@ -54,7 +54,9 @@ jobs:
           node-version: 24
           build-cmd: |
             (cd .external/bee-and-flower && node --test)
-            pnpm build:publish
+            pnpm build
+            mkdir -p dist/apps/baby-programming/bee-and-flower
+            cp .external/bee-and-flower/bee-and-flower/{index.html,favicon.ico,image.png} dist/apps/baby-programming/bee-and-flower/
 
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'

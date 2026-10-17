@@ -9,7 +9,6 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "build:publish": "astro build && node scripts/copy-published-app.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
