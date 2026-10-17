@@ -1,0 +1,84 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import BabyProgrammingDialog from '../../components/BabyProgrammingDialog.astro';
+
+const babyProgrammingImage = 'https://atsuhi.ro/apps/baby-programming/bee-and-flower/image.png';
+const apps = [
+  {
+    id: 'cookbot',
+    name: 'CookBot',
+    tagline: 'AIが作るあなただけのレシピ提案',
+    description: '冷蔵庫の材料を教えるだけで、AIがレシピを提案。調味料の代用提案機能で、毎日の料理をサポートします。',
+    image: 'https://cookbot.jp/images/thumbnail.jpg',
+    imageAlt: 'CookBot - AIが作るあなただけのレシピ提案',
+    href: 'https://cookbot.jp/',
+  },
+  {
+    id: 'baby-programming',
+    name: 'はちさんと おはな',
+    tagline: '4〜6歳向け・無料のプログラミング体験ゲーム',
+    description: '「すすむ」「左にまわる」「右にまわる」の命令を並べて、はちさんをお花まで動かすゲームです。',
+    image: babyProgrammingImage,
+    imageAlt: 'はちさんと おはな：はじめてのプログラミング',
+    dialogId: 'baby-programming-dialog',
+  },
+];
+---
+
+<SiteLayout
+  title="Apps - Atsuhiro Fujii（藤井 敦寛）"
+  canonicalUrl="https://atsuhi.ro/apps/"
+  description="Atsuhiro Fujii（藤井 敦寛）が開発・運営するアプリケーションをご紹介します．"
+  imageAlt="Applications by Atsuhiro Fujii"
+>
+  <main class="container mx-auto px-6 py-12 mt-20 max-w-4xl flex-1">
+    <div class="apps-heading">
+      <h1>アプリケーション / Apps</h1>
+      <p>開発・運営しているアプリケーションをご紹介します。</p>
+    </div>
+    <div class="apps-grid">
+      {apps.map((app) => (
+        <article class="app-card">
+          <img class="app-card-image" src={app.image} alt={app.imageAlt} width="1200" height="630" />
+          <div class="app-card-content">
+            <h2>{app.name}</h2>
+            <p class="app-tagline">{app.tagline}</p>
+            <p class="app-description">{app.description}</p>
+            {app.href ? (
+              <a class="app-card-action" href={app.href} target="_blank" rel="noopener noreferrer" aria-label={`${app.name}の紹介サイトを新しいタブで開く`}>
+                紹介サイトを見る <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
+                <span class="new-tab-note">新しいタブで開きます</span>
+              </a>
+            ) : (
+              <button class="app-card-action" type="button" data-dialog-target={app.dialogId} aria-haspopup="dialog" aria-controls={app.dialogId} aria-label={`${app.name}の詳細を見る`}>
+                詳しく見る <span aria-hidden="true">→</span>
+              </button>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+    <BabyProgrammingDialog imageSrc={babyProgrammingImage} />
+  </main>
+</SiteLayout>
+
+<style>
+  .apps-heading { margin-bottom: 2rem; }
+  .apps-heading h1 { margin: 0 0 .75rem; font-size: clamp(1.4rem, 4vw, 1.875rem); font-weight: 700; }
+  .apps-heading p { color: #475569; line-height: 1.8; }
+  .apps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .app-card { position: relative; display: flex; flex-direction: column; overflow: hidden; background: white; border: 1px solid #e2e8f0; border-radius: 1rem; box-shadow: 0 2px 5px #0f172a08; transition: border-color .15s, box-shadow .15s; }
+  .app-card:hover { border-color: #94a3b8; box-shadow: 0 6px 20px #0f172a10; }
+  .app-card-image { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: contain; background: #faf8ef; border-bottom: 1px solid #e2e8f0; }
+  .app-card-content { display: flex; flex-direction: column; flex: 1; padding: 1.5rem; }
+  .app-card h2 { margin: 0 0 .5rem; font-size: 1.4rem; font-weight: 700; }
+  .app-tagline { margin: 0 0 .75rem; color: #334155; font-size: .9rem; font-weight: 600; line-height: 1.7; }
+  .app-description { margin: 0 0 1.5rem; color: #475569; line-height: 1.85; }
+  .app-card-action { align-self: flex-start; margin-top: auto; padding: 0; background: transparent; border: 0; color: #1e40af; font: inherit; font-weight: 600; cursor: pointer; text-align: left; }
+  .app-card-action::after { content: ''; position: absolute; inset: 0; border-radius: 1rem; }
+  .app-card-action:focus-visible { outline: none; }
+  .app-card-action:focus-visible::after { outline: 3px solid #2563eb; outline-offset: -3px; }
+  .new-tab-note { display: block; margin-top: .25rem; font-size: .75rem; font-weight: 400; color: #64748b; }
+  @media (max-width: 640px) { .apps-grid { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .app-card { transition: none; } }
+</style>

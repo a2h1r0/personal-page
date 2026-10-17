@@ -1,0 +1,84 @@
+---
+interface Props {
+  imageSrc: string;
+}
+const { imageSrc } = Astro.props;
+---
+
+<dialog id="baby-programming-dialog" class="app-dialog" aria-labelledby="baby-programming-title" aria-describedby="baby-programming-intro">
+  <div class="dialog-heading">
+    <h2 id="baby-programming-title">はちさんと おはな</h2>
+    <form method="dialog">
+      <button class="dialog-close" type="submit" autofocus>閉じる <span aria-hidden="true">×</span></button>
+    </form>
+  </div>
+  <img class="dialog-image" src={imageSrc} alt="はちさんと おはな：はじめてのプログラミング" width="1731" height="909" />
+  <div class="dialog-content">
+    <p class="dialog-lead">命令をならべて、はちさんをお花まで。</p>
+    <p id="baby-programming-intro">大きなボタンで「すすむ」「左にまわる」「右にまわる」の命令を並べて、はちさんをお花まで動かします。順番に命令することや、間違えたら直すことを遊びながら体験できます。</p>
+    <ul class="app-facts">
+      <li>4〜6歳向け</li>
+      <li>無料・登録不要</li>
+      <li>少しずつ難しくなるレベル</li>
+    </ul>
+    <div class="level-details">
+      <section>
+        <h3>前進からスタート</h3>
+        <p>「すすむ」を並べて、命令の順番を体験します。最初は短い道から始めます。</p>
+      </section>
+      <section>
+        <h3>回転や岩のある道へ</h3>
+        <p>レベルが進むと左右への回転や岩が加わります。お花までの道を考えながら、繰り返し遊べます。</p>
+      </section>
+    </div>
+    <a class="play-button" href="/apps/baby-programming/bee-and-flower/" target="_blank" rel="noopener noreferrer">
+      ゲームであそぶ <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
+      <span class="play-note">新しいタブで開きます</span>
+    </a>
+    <p class="offline-note">HTMLファイルを保存すれば、オフラインでも遊べます。</p>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#baby-programming-dialog');
+  if (dialog) {
+    document.querySelectorAll<HTMLButtonElement>('[data-dialog-target="baby-programming-dialog"]').forEach((button) => {
+      button.addEventListener('click', () => dialog.showModal());
+    });
+    dialog.addEventListener('click', (event) => {
+      const bounds = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) {
+        dialog.close();
+      }
+    });
+  }
+</script>
+
+<style>
+  .app-dialog { width: min(720px, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); margin: auto; padding: 0; border: 0; border-radius: 1rem; color: #0f172a; background: white; box-shadow: 0 24px 80px #0f172a40; overflow-y: auto; }
+  .app-dialog::backdrop { background: #0f172a99; }
+  .dialog-heading { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.5rem; background: white; border-bottom: 1px solid #e2e8f0; }
+  .dialog-heading h2 { margin: 0; font-size: 1.25rem; font-weight: 700; }
+  .dialog-close { padding: .5rem; border: 0; border-radius: .5rem; color: #475569; background: #f1f5f9; font: inherit; cursor: pointer; white-space: nowrap; }
+  .dialog-close:focus-visible, .play-button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+  .dialog-image { display: block; width: 100%; height: auto; max-height: 250px; object-fit: contain; background: #faf8ef; }
+  .dialog-content { padding: 1.5rem; }
+  .dialog-lead { margin: 0 0 .75rem; font-size: 1.25rem; font-weight: 700; }
+  .dialog-content p { line-height: 1.85; }
+  .app-facts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; padding: 0; list-style: none; }
+  .app-facts li { padding: .25rem .75rem; border-radius: 2rem; background: #f1f5f9; color: #334155; font-size: .8rem; }
+  .level-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  .level-details section { padding: 1rem; border-radius: .75rem; background: #f8fafc; }
+  .level-details h3 { margin: 0 0 .5rem; font-weight: 700; }
+  .level-details p { margin: 0; font-size: .9rem; color: #475569; }
+  .play-button { display: block; padding: .9rem 1.25rem; border-radius: .75rem; background: #356b4b; color: white; text-align: center; font-weight: 700; }
+  .play-button:hover { background: #28573b; }
+  .play-note { display: block; margin-top: .2rem; font-size: .75rem; font-weight: 400; }
+  .offline-note { margin: 1rem 0 0; font-size: .8rem; color: #64748b; text-align: center; }
+  :global(body:has(#baby-programming-dialog[open])) { overflow: hidden; }
+  @media (max-width: 480px) {
+    .dialog-heading, .dialog-content { padding: 1rem; }
+    .dialog-heading h2 { font-size: 1.05rem; }
+    .level-details { grid-template-columns: 1fr; }
+  }
+</style>
