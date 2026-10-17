@@ -12,26 +12,26 @@ const { imageSrc } = Astro.props;
       <button class="dialog-close" type="submit" autofocus>閉じる <span aria-hidden="true">×</span></button>
     </form>
   </div>
-  <img class="dialog-image" src={imageSrc} alt="はちさんがお花にたどり着いたゲーム画面" width="1024" height="680" />
+  <img class="dialog-image" src={imageSrc} alt="はちさんと おはな：はじめてのプログラミング" width="1731" height="909" />
   <div class="dialog-content">
     <p class="dialog-lead">命令をならべて、はちさんをお花まで。</p>
     <p id="baby-programming-intro">大きなボタンで「すすむ」「左にまわる」「右にまわる」の命令を並べて、はちさんをお花まで動かします。順番に命令することや、間違えたら直すことを遊びながら体験できます。</p>
     <ul class="app-facts">
       <li>4〜6歳向け</li>
       <li>無料・登録不要</li>
-      <li>2つのモード・全8課題</li>
+      <li>少しずつ難しくなるレベル</li>
     </ul>
-    <div class="mode-details">
+    <div class="level-details">
       <section>
-        <h3>かんたん / 4〜5歳</h3>
-        <p>「すすむ」を並べて、命令の順番を体験します。</p>
+        <h3>前進からスタート</h3>
+        <p>「すすむ」を並べて、命令の順番を体験します。最初は短い道から始めます。</p>
       </section>
       <section>
-        <h3>チャレンジ / 5〜6歳</h3>
-        <p>左右にまわる命令も組み合わせて、お花を目指します。</p>
+        <h3>回転や岩のある道へ</h3>
+        <p>レベルが進むと左右への回転や岩が加わります。お花までの道を考えながら、繰り返し遊べます。</p>
       </section>
     </div>
-    <a class="play-button" href="/apps/baby-programming/" target="_blank" rel="noopener noreferrer">
+    <a class="play-button" href="/apps/baby-programming/bee-and-flower/" target="_blank" rel="noopener noreferrer">
       ゲームであそぶ <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
       <span class="play-note">新しいタブで開きます</span>
     </a>
@@ -67,10 +67,10 @@ const { imageSrc } = Astro.props;
   .dialog-content p { line-height: 1.85; }
   .app-facts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; padding: 0; list-style: none; }
   .app-facts li { padding: .25rem .75rem; border-radius: 2rem; background: #f1f5f9; color: #334155; font-size: .8rem; }
-  .mode-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
-  .mode-details section { padding: 1rem; border-radius: .75rem; background: #f8fafc; }
-  .mode-details h3 { margin: 0 0 .5rem; font-weight: 700; }
-  .mode-details p { margin: 0; font-size: .9rem; color: #475569; }
+  .level-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  .level-details section { padding: 1rem; border-radius: .75rem; background: #f8fafc; }
+  .level-details h3 { margin: 0 0 .5rem; font-weight: 700; }
+  .level-details p { margin: 0; font-size: .9rem; color: #475569; }
   .play-button { display: block; padding: .9rem 1.25rem; border-radius: .75rem; background: #356b4b; color: white; text-align: center; font-weight: 700; }
   .play-button:hover { background: #28573b; }
   .play-note { display: block; margin-top: .2rem; font-size: .75rem; font-weight: 400; }
@@ -79,6 +79,6 @@ const { imageSrc } = Astro.props;
   @media (max-width: 480px) {
     .dialog-heading, .dialog-content { padding: 1rem; }
     .dialog-heading h2 { font-size: 1.05rem; }
-    .mode-details { grid-template-columns: 1fr; }
+    .level-details { grid-template-columns: 1fr; }
   }
 </style>
