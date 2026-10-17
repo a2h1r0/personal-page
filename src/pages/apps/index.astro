@@ -16,7 +16,7 @@ const apps = [
   {
     id: 'baby-programming',
     name: 'はちさんと おはな',
-    tagline: '4〜6歳向け・無料のプログラミング体験ゲーム',
+    tagline: '幼児向け・無料のプログラミング体験ゲーム',
     description: '大きなボタンをタップしてハチをお花まで動かす、幼児向けの無料プログラミング体験ゲームです。試して直す体験を通して、プログラミング的思考力を育みます。',
     image: babyProgrammingImage,
     imageAlt: 'はちさんと おはな：はじめてのプログラミング',
@@ -28,13 +28,12 @@ const apps = [
 <SiteLayout
   title="Apps - Atsuhiro Fujii（藤井 敦寛）"
   canonicalUrl="https://atsuhi.ro/apps/"
-  description="Atsuhiro Fujii（藤井 敦寛）が開発・運営するアプリケーションをご紹介します．"
+  description="Atsuhiro Fujii（藤井 敦寛）のアプリケーション一覧。CookBot、はちさんとおはなを掲載しています。"
   imageAlt="Applications by Atsuhiro Fujii"
 >
   <main class="container mx-auto px-6 py-12 mt-20 max-w-4xl flex-1">
     <div class="apps-heading">
       <h1>アプリケーション / Apps</h1>
-      <p>開発・運営しているアプリケーションをご紹介します。</p>
     </div>
     <div class="apps-grid">
       {apps.map((app) => (
@@ -45,9 +44,8 @@ const apps = [
             <p class="app-tagline">{app.tagline}</p>
             <p class="app-description">{app.description}</p>
             {app.href ? (
-              <a class="app-card-action" href={app.href} target="_blank" rel="noopener noreferrer" aria-label={`${app.name}のアプリを新しいタブで開く`}>
-                アプリを開く <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
-                <span class="new-tab-note">新しいタブで開きます</span>
+              <a class="app-card-action" href={app.href} target="_blank" rel="noopener noreferrer" aria-label={`${app.name}を開く`}>
+                アプリケーションを開く <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
               </a>
             ) : (
               <button class="app-card-action" type="button" data-dialog-target={app.dialogId} aria-haspopup="dialog" aria-controls={app.dialogId} aria-label={`${app.name}の詳細を見る`}>
@@ -65,7 +63,6 @@ const apps = [
 <style>
   .apps-heading { margin-bottom: 2rem; }
   .apps-heading h1 { margin: 0 0 .75rem; font-size: clamp(1.4rem, 4vw, 1.875rem); font-weight: 700; }
-  .apps-heading p { color: #475569; line-height: 1.8; }
   .apps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
   .app-card { position: relative; display: flex; flex-direction: column; overflow: hidden; background: white; border: 1px solid #e2e8f0; border-radius: 1rem; box-shadow: 0 2px 5px #0f172a08; transition: border-color .15s, box-shadow .15s; }
   .app-card:hover { border-color: #94a3b8; box-shadow: 0 6px 20px #0f172a10; }
@@ -78,7 +75,6 @@ const apps = [
   .app-card-action::after { content: ''; position: absolute; inset: 0; border-radius: 1rem; }
   .app-card-action:focus-visible { outline: none; }
   .app-card-action:focus-visible::after { outline: 3px solid #2563eb; outline-offset: -3px; }
-  .new-tab-note { display: block; margin-top: .25rem; font-size: .75rem; font-weight: 400; color: #64748b; }
   @media (max-width: 640px) { .apps-grid { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { .app-card { transition: none; } }
 </style>
