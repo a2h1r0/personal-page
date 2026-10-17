@@ -6,19 +6,57 @@ on:
   pull_request:
     branches: [master]
   workflow_dispatch:
+    inputs:
+      game_revision:
+        description: Tested baby-programming commit (empty uses main)
+        required: false
+        type: string
 
 permissions:
   contents: read
 
+concurrency:
+  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      game_revision: ${{ steps.game.outputs.revision }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate the requested game revision
+        shell: bash
+        env:
+          GAME_REVISION: ${{ inputs.game_revision }}
+        run: |
+          if [ -n "$GAME_REVISION" ] && [[ ! "$GAME_REVISION" =~ ^[0-9a-f]{40}$ ]]; then
+            echo 'game_revision must be a full lowercase commit SHA.' >&2
+            exit 1
+          fi
+      - name: Check out the game only for this build
+        uses: actions/checkout@v7
+        with:
+          repository: a2h1r0/baby-programming
+          ref: ${{ inputs.game_revision || 'main' }}
+          path: .external/bee-and-flower
+          persist-credentials: false
+      - name: Record the game revision only for this workflow run
+        id: game
+        shell: bash
+        run: printf 'revision=%s\n' "$(git -C .external/bee-and-flower rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Install, build, and upload Astro site
         uses: withastro/action@v6
         with:
           node-version: 24
+          build-cmd: |
+            (cd .external/bee-and-flower && node --test)
+            pnpm build
+            mkdir -p dist/apps/baby-programming/bee-and-flower
+            cp .external/bee-and-flower/bee-and-flower/{index.html,favicon.ico,image.png} dist/apps/baby-programming/bee-and-flower/
 
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
@@ -27,13 +65,26 @@ jobs:
     permissions:
       pages: write
       id-token: write
-    concurrency:
-      group: github-pages
-      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check for newer site or game changes before publishing
+        id: current
+        shell: bash
+        env:
+          SITE_REVISION: ${{ github.sha }}
+          GAME_REVISION: ${{ needs.build.outputs.game_revision }}
+        run: |
+          site_latest="$(git ls-remote https://github.com/a2h1r0/personal-page.git refs/heads/master | cut -f1)"
+          game_latest="$(git ls-remote https://github.com/a2h1r0/baby-programming.git refs/heads/main | cut -f1)"
+          if [ "$SITE_REVISION" = "$site_latest" ] && [ "$GAME_REVISION" = "$game_latest" ]; then
+            echo 'publish=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Newer changes exist; skip this outdated deployment.'
+            echo 'publish=false' >> "$GITHUB_OUTPUT"
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
+        if: steps.current.outputs.publish == 'true'
         uses: actions/deploy-pages@v5
