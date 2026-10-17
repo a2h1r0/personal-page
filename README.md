@@ -13,7 +13,7 @@ Atsuhiro Fujii（藤井 敦寛）の個人サイトです。プロフィール�
 | Publications | 論文、発表、受賞などの研究業績 | <https://atsuhi.ro/publications.html> |
 | Dataset | 研究で使用したデータセット | <https://atsuhi.ro/dataset.html> |
 | Apps | アプリケーション一覧と紹介 | <https://atsuhi.ro/apps/> |
-| はちさんと おはな | 4〜6歳向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/> |
+| はちさんと おはな | 4〜6歳向けの無料プログラミング体験ゲーム | <https://atsuhi.ro/apps/baby-programming/bee-and-flower/> |
 
 ## アプリ一覧の管理
 
@@ -49,7 +49,17 @@ pnpm preview
 ## 公開
 
 GitHub Pagesで`https://atsuhi.ro/`に公開します。
-`master`へのpush時に[Deploy to GitHub Pages](https://github.com/a2h1r0/personal-page/actions/workflows/deploy.yml)がAstroをビルドし、`dist/`を公開します。プルリクエストではビルドのみ確認します。
+`master`へのpush時に[Deploy to GitHub Pages](https://github.com/a2h1r0/personal-page/actions/workflows/deploy.yml)がAstroをビルドし、別リポジトリのゲームを公開成果物へ組み込んだ`dist/`を公開します。プルリクエストでは同じ取り込み・テスト・ビルドを確認し、公開は行いません。
+
+「はちさんと おはな」の編集元は[`a2h1r0/baby-programming`](https://github.com/a2h1r0/baby-programming)です。ゲーム側の`main`へのpush後、テストに成功するとGitHub Appがこのサイトの公開処理を直接起動します。テスト済みのSHAは`game_revision`入力として渡され、実行中だけ使用します。このサイトにはゲームのHTML・画像・公開版のSHAファイルを保存しません。
+
+公開処理では、ゲームを`.external/bee-and-flower/`に一時取得して再テストし、Astroビルド後にHTML・favicon・OGP画像を`dist/apps/baby-programming/bee-and-flower/`へコピーします。取得・テスト・コピーに失敗した場合は公開しません。サイトだけの更新や入力を省略した手動実行では、ゲーム側の`main`を取得します。その場合もゲームのテストが通る必要があります。
+
+本番の公開処理は直列に実行し、公開直前に両リポジトリの最新コミットを確認します。新しい更新がある古い実行は公開をスキップします。
+
+通常の`pnpm dev`と`pnpm build`は個人サイトのみを対象にします。ゲームの取得とコピーはGitHub Actions内で実行し、成果物のアップロード前に組み込みます。ゲームを含む公開成果物は、Actionsのビルドで生成されるGitHub PagesのArtifactから確認できます。`.external/`と`dist/`はGit管理対象外です。
+
+GitHub Appの認証情報はゲーム側に設定します。Repository permissionsの **Actions: Read and write** を持つAppをこのリポジトリだけにインストールし、ゲーム側のVariable `SITE_DEPLOY_APP_CLIENT_ID`とSecret `SITE_DEPLOY_APP_PRIVATE_KEY`にClient IDと秘密鍵を登録します。トークンは実行時に自動発行します。
 
 リポジトリの[Settings → Pages](https://github.com/a2h1r0/personal-page/settings/pages)で、公開元のSourceを**GitHub Actions**、Custom domainを**atsuhi.ro**に設定します。Jekyllによるブランチ直接公開は使用しません。
 独自ドメインはPages側にも設定が必要です。`public/CNAME`だけでは、カスタムワークフローの公開ドメインは設定されません。
@@ -64,8 +74,10 @@ GitHub Pagesで`https://atsuhi.ro/`に公開します。
 src/
   components/  ヘッダー、フッター、metaタグなどの共通部品
   layouts/     ページ共通のレイアウト
-  pages/       各ページとプログラミング体験ゲーム
+  pages/       個人サイトの各ページ
 public/        CSS、画像、favicon、サイトマップなどの静的ファイル
 ```
 
 ページ固有の掲載内容は`src/pages/`、共通部分は`src/components/`と`src/layouts/`で管理します。
+
+他のアプリを追加する場合も、編集元のリポジトリと公開時の取得・コピー処理を用意し、`dist/apps/baby-programming/<アプリ名>/`へ配置します。アプリ本体や公開版のSHAファイルは、このサイトのソースへ追加しません。
