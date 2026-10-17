@@ -17,7 +17,7 @@ const apps = [
     id: 'baby-programming',
     name: 'はちさんと おはな',
     tagline: '4〜6歳向け・無料のプログラミング体験ゲーム',
-    description: '「すすむ」「左にまわる」「右にまわる」の命令を並べて、はちさんをお花まで動かすゲームです。',
+    description: '大きなボタンをタップしてハチをお花まで動かす、幼児向けの無料プログラミング体験ゲームです。試して直す体験を通して、プログラミング的思考力を育みます。',
     image: babyProgrammingImage,
     imageAlt: 'はちさんと おはな：はじめてのプログラミング',
     dialogId: 'baby-programming-dialog',
@@ -45,8 +45,8 @@ const apps = [
             <p class="app-tagline">{app.tagline}</p>
             <p class="app-description">{app.description}</p>
             {app.href ? (
-              <a class="app-card-action" href={app.href} target="_blank" rel="noopener noreferrer" aria-label={`${app.name}の紹介サイトを新しいタブで開く`}>
-                紹介サイトを見る <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
+              <a class="app-card-action" href={app.href} target="_blank" rel="noopener noreferrer" aria-label={`${app.name}のアプリを新しいタブで開く`}>
+                アプリを開く <i class="mdi mdi-open-in-new" aria-hidden="true"></i>
                 <span class="new-tab-note">新しいタブで開きます</span>
               </a>
             ) : (
