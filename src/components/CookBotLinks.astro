@@ -1,11 +1,4 @@
----
-interface Props {
-  inline?: boolean;
-}
-const { inline = false } = Astro.props;
----
-
-<div class:list={['cookbot-links', { 'cookbot-links-inline': inline }]} role="group" aria-label="CookBotを開く">
+<div class="cookbot-links" role="group" aria-label="CookBotを開く">
   <a
     href="https://cookbot.jp/"
     target="_blank"
@@ -36,14 +29,5 @@ const { inline = false } = Astro.props;
 </div>
 
 <style>
-  .cookbot-links { display: flex; flex-direction: column; gap: .75rem; }
-  @media (min-width: 640px) {
-    .cookbot-links { flex-direction: row; flex-wrap: wrap; }
-  }
-  .cookbot-links-inline { flex-direction: row; flex-wrap: nowrap; }
-  @media (max-width: 639px) {
-    .cookbot-links-inline { gap: .375rem; }
-    .cookbot-links-inline a { flex: 1; justify-content: center; padding: .5rem .375rem; font-size: .875rem; }
-    .cookbot-links-inline i { display: none; }
-  }
+  .cookbot-links { display: flex; flex-wrap: wrap; gap: .75rem; }
 </style>

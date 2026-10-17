@@ -45,7 +45,7 @@ const apps = [
             <p class="app-description">{app.description}</p>
             {app.id === 'cookbot' ? (
               <div class="app-card-links">
-                <CookBotLinks inline />
+                <CookBotLinks />
               </div>
             ) : (
               <button class="app-card-action" type="button" data-dialog-target={app.dialogId} aria-haspopup="dialog" aria-controls={app.dialogId} aria-label={`${app.name}の詳細を見る`}>
