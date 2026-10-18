@@ -61,10 +61,10 @@ const apps = [
 </SiteLayout>
 
 <style>
-  .apps-container { width: 100%; max-width: 64rem; }
+  .apps-container { width: 100%; max-width: 80rem; }
   .apps-heading { margin-bottom: 2rem; }
   .apps-heading h1 { margin: 0 0 .75rem; font-size: clamp(1.4rem, 4vw, 1.875rem); font-weight: 700; }
-  .apps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr)); gap: 1.5rem; }
   .app-card { position: relative; display: flex; flex-direction: column; overflow: hidden; background: white; border: 1px solid #e2e8f0; border-radius: 1rem; box-shadow: 0 2px 5px #0f172a08; transition: border-color .15s, box-shadow .15s; }
   .app-card-interactive:hover { border-color: #94a3b8; box-shadow: 0 6px 20px #0f172a10; }
   .app-card-image { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: contain; background: #faf8ef; border-bottom: 1px solid #e2e8f0; }
@@ -77,6 +77,5 @@ const apps = [
   .app-card-action::after { content: ''; position: absolute; inset: 0; border-radius: 1rem; }
   .app-card-action:focus-visible { outline: none; }
   .app-card-action:focus-visible::after { outline: 3px solid #2563eb; outline-offset: -3px; }
-  @media (max-width: 959px) { .apps-grid { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { .app-card { transition: none; } }
 </style>
