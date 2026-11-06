@@ -52,7 +52,7 @@ pnpm preview
 ## 公開
 
 GitHub Pagesで`https://atsuhi.ro/`に公開します。
-`master`へのpush時に[Deploy to GitHub Pages](https://github.com/a2h1r0/personal-page/actions/workflows/deploy.yml)がAstroをビルドし、別リポジトリのゲームを公開成果物へ組み込んだ`dist/`を公開します。プルリクエストでは同じ取り込み・テスト・ビルドを確認し、公開は行いません。
+`main`へのpush時に[Deploy to GitHub Pages](https://github.com/a2h1r0/personal-page/actions/workflows/deploy.yml)がAstroをビルドし、別リポジトリのゲームを公開成果物へ組み込んだ`dist/`を公開します。プルリクエストでは同じ取り込み・テスト・ビルドを確認し、公開は行いません。
 
 「はちさんと おはな」の編集元は[`a2h1r0/baby-programming`](https://github.com/a2h1r0/baby-programming)です。ゲーム側の`main`へのpush後、テストに成功するとGitHub Appがこのサイトの公開処理を直接起動します。テスト済みのSHAは`game_revision`入力として渡され、実行中だけ使用します。このサイトにはゲームのHTML・画像・公開版のSHAファイルを保存しません。
 
@@ -67,7 +67,7 @@ GitHub Appの認証情報はゲーム側に設定します。Repository permissi
 リポジトリの[Settings → Pages](https://github.com/a2h1r0/personal-page/settings/pages)で、公開元のSourceを**GitHub Actions**、Custom domainを**atsuhi.ro**に設定します。Jekyllによるブランチ直接公開は使用しません。
 独自ドメインはPages側にも設定が必要です。`public/CNAME`だけでは、カスタムワークフローの公開ドメインは設定されません。
 
-手動で再公開する場合は、Actionsの**Deploy to GitHub Pages → Run workflow**から`master`を選択します。完了後、公開サイトの各ページとデータセット・ゲームへのリンクを確認します。
+手動で再公開する場合は、Actionsの**Deploy to GitHub Pages → Run workflow**から`main`を選択します。完了後、公開サイトの各ページとデータセット・ゲームへのリンクを確認します。
 
 詳細は[AstroのGitHub Pages公開ガイド](https://docs.astro.build/en/guides/deploy/github/)と[GitHubの独自ドメイン設定](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)を参照してください。
 
