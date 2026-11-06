@@ -2,9 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
     inputs:
       game_revision:
@@ -59,7 +59,7 @@ jobs:
             cp .external/bee-and-flower/bee-and-flower/{index.html,favicon.ico,image.png} dist/apps/baby-programming/bee-and-flower/
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -76,7 +76,7 @@ jobs:
           SITE_REVISION: ${{ github.sha }}
           GAME_REVISION: ${{ needs.build.outputs.game_revision }}
         run: |
-          site_latest="$(git ls-remote https://github.com/a2h1r0/personal-page.git refs/heads/master | cut -f1)"
+          site_latest="$(git ls-remote https://github.com/a2h1r0/personal-page.git refs/heads/main | cut -f1)"
           game_latest="$(git ls-remote https://github.com/a2h1r0/baby-programming.git refs/heads/main | cut -f1)"
           if [ "$SITE_REVISION" = "$site_latest" ] && [ "$GAME_REVISION" = "$game_latest" ]; then
             echo 'publish=true' >> "$GITHUB_OUTPUT"
